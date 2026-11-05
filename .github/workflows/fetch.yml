@@ -1,0 +1,30 @@
+name: Descarregar fotografias
+on:
+  push:
+    paths:
+      - 'fetch/*.txt'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Descarregar
+        run: |
+          mkdir -p fotos
+          for f in fetch/*.txt; do
+            while read -r name url; do
+              [ -z "$name" ] && continue
+              [ -f "fotos/$name" ] && continue
+              curl -sSL --fail -o "fotos/$name" "$url&w=1600"
+            done < "$f"
+          done
+      - name: Guardar
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add fotos
+          git diff --cached --quiet || git commit -m "Fotografias descarregadas"
+          git push
