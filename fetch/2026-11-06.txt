@@ -5,3 +5,9 @@ casal-maos.jpg https://images.unsplash.com/photo-1658314755707-1fbdf7c40145?ixli
 casal-jovem-livro.jpg https://images.unsplash.com/photo-1758687126914-79766e86df15?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 casal-jovem-riso.jpg https://images.unsplash.com/photo-1655759738595-418970010986?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 casal-jovem-telemovel.jpg https://images.unsplash.com/photo-1758876200754-17a09a6c2728?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-sereno-1.jpg https://images.unsplash.com/photo-1770610272273-a864175928ec?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-sereno-2.jpg https://images.unsplash.com/photo-1655759738542-7249f691f27d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-sereno-3.jpg https://images.unsplash.com/photo-1770610272268-526dcc1ba963?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-sereno-4.jpg https://images.unsplash.com/photo-1484973768669-7fb6b5451095?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-sereno-5.jpg https://images.unsplash.com/photo-1607292684473-c69dcf62cd0b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-sereno-6.jpg https://images.unsplash.com/photo-1673723201362-731418a2a49a?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
