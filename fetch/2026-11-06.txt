@@ -2,3 +2,6 @@ irs-calculadora.jpg https://images.unsplash.com/photo-1709880945165-d2208c6ad2ec
 irs-papel.jpg https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 casal-sala.jpg https://images.unsplash.com/photo-1658632302217-984d432b4d38?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 casal-maos.jpg https://images.unsplash.com/photo-1658314755707-1fbdf7c40145?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-jovem-livro.jpg https://images.unsplash.com/photo-1758687126914-79766e86df15?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-jovem-riso.jpg https://images.unsplash.com/photo-1655759738595-418970010986?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+casal-jovem-telemovel.jpg https://images.unsplash.com/photo-1758876200754-17a09a6c2728?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
