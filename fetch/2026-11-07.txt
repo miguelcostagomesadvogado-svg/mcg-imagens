@@ -11,3 +11,6 @@ silencio-6.jpg https://images.unsplash.com/photo-1665646458877-90669ce5ccd6?ixli
 silencio-7.jpg https://images.unsplash.com/photo-1768915006715-466a1ea3c289?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 silencio-8.jpg https://images.unsplash.com/photo-1775882690957-e1191edb8af1?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 silencio-9.jpg https://images.unsplash.com/photo-1716072947555-90c86c2af4db?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+silencio-10.jpg https://images.unsplash.com/photo-1574970790425-e79b9bc0e6f9?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+silencio-11.jpg https://images.unsplash.com/photo-1644611149613-2d88cab0550f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+silencio-12.jpg https://images.unsplash.com/photo-1673114091701-47b186e25265?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
