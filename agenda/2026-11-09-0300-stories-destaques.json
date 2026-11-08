@@ -1,0 +1,26 @@
+{
+  "quando": "2026-11-09T03:00",
+  "redes": [
+    "instagram"
+  ],
+  "tipo": "story",
+  "imagens": [
+    "destaques/capa-familia.jpg",
+    "destaques/story-uniao.jpg",
+    "destaques/story-divorcio.jpg",
+    "destaques/capa-penal.jpg",
+    "destaques/story-arguido.jpg",
+    "destaques/story-emigrantes.jpg",
+    "destaques/capa-outros.jpg",
+    "destaques/story-lei.jpg",
+    "destaques/story-contacto.jpg",
+    "2026-11-08/0959-destaque-areas.jpg",
+    "2026-11-08/1000-destaque-videoconferencia.jpg",
+    "2026-11-08/1001-destaque-emigrantes.jpg",
+    "2026-11-08/1002-destaque-todo-o-pais.jpg"
+  ],
+  "legenda": "",
+  "aprovado": true,
+  "publicar_atrasado": true,
+  "nota": "Stories para os destaques que o Metricool não publicou a 8 nov. 2026 (aprovadas a 7 nov.)."
+}
