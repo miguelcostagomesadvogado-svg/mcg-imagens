@@ -4,3 +4,6 @@ seguranca-topo.jpg https://images.unsplash.com/photo-1649320316177-775fe2d67ca3?
 seguranca-fachada.jpg https://images.unsplash.com/photo-1647087739082-25d4989aa438?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 creditos-caixa-1.jpg https://images.unsplash.com/photo-1758691737357-12839a28de6d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 creditos-caixa-2.jpg https://images.unsplash.com/photo-1758691737424-b0cdcfce9f66?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+creditos-mulher-doc.jpg https://images.unsplash.com/photo-1758876201660-103984519266?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+creditos-mulher-fato.jpg https://images.unsplash.com/photo-1762341114530-a0c54d8cc18b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+creditos-mulher-papel.jpg https://images.unsplash.com/photo-1695388474402-ed805a890d8d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
