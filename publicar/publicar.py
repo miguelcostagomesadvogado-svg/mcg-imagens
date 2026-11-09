@@ -28,7 +28,15 @@ AGENDA = "agenda"
 MAX_ATRASO_H = 6  # peças com mais atraso não saem sozinhas (vão para agenda/atrasadas)
 MAX_TENTATIVAS = 3
 
-TOKEN = os.environ.get("META_TOKEN", "").strip()
+def _limpar_token(t):
+    """Aceita o token mesmo que tenha sido colado com aspas, vírgula ou com o prefixo "access_token":."""
+    t = (t or "").strip()
+    if ":" in t:
+        t = t.split(":")[-1]
+    return t.strip().strip(",").strip().strip('"').strip("'").strip()
+
+
+TOKEN = _limpar_token(os.environ.get("META_TOKEN", ""))
 IG = os.environ.get("IG_USER_ID", "").strip()
 PAGE = os.environ.get("FB_PAGE_ID", "").strip()
 VER = os.environ.get("GRAPH_VERSION", "").strip() or "v25.0"
@@ -196,6 +204,14 @@ def main():
         return
     if modo == "verificar":
         verificar()
+        return
+    # Se a ligação à Meta falhar, não mexe na agenda (as peças não contam tentativas).
+    try:
+        pedido("GET", PAGE, {"fields": "id"})
+    except ErroMeta as e:
+        estado(["Ligação à Meta: COM ERRO", "", f"Última tentativa: {agora():%Y-%m-%d %H:%M} (Lisboa)", f"- {e}",
+                "As peças aprovadas ficam guardadas e saem quando a ligação voltar."])
+        print(f"Ligação à Meta com erro: {e}")
         return
 
     publicadas, erros = [], []
