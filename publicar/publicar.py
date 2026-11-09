@@ -263,5 +263,38 @@ def main():
         estado(linhas)
 
 
+def git(*args):
+    import subprocess
+    return subprocess.run(["git", *args], capture_output=True, text=True)
+
+
+def ciclo(minutos=345, intervalo=120):
+    """Vigia a agenda durante ~5h45: atualiza do GitHub, publica o que estiver na hora e guarda o resultado."""
+    fim = time.time() + minutos * 60
+    while True:
+        git("stash", "-q")
+        git("pull", "--rebase", "-q")
+        git("stash", "pop", "-q")
+        sys.argv = [sys.argv[0], "publicar"]
+        try:
+            main()
+        except Exception as e:  # nunca deixa o ciclo morrer por uma peça
+            print(f"Erro inesperado: {e}")
+        git("add", "-A", AGENDA)
+        if git("diff", "--cached", "--quiet").returncode != 0:
+            git("commit", "-q", "-m", "Agenda: resultado da publicação")
+            for _ in range(3):
+                git("pull", "--rebase", "-q")
+                if git("push", "-q").returncode == 0:
+                    break
+                time.sleep(5)
+        if time.time() + intervalo > fim:
+            break
+        time.sleep(intervalo)
+
+
 if __name__ == "__main__":
-    main()
+    if len(sys.argv) > 1 and sys.argv[1] == "ciclo":
+        ciclo()
+    else:
+        main()

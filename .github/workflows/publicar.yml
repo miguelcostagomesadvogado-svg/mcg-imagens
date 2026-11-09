@@ -1,12 +1,15 @@
 name: Publicar nas redes
+# O cron do GitHub atrasa muito; por isso cada execução fica a vigiar a agenda
+# durante quase 6 horas (verifica de 2 em 2 minutos). O cron só garante que há
+# sempre uma execução ativa; as que chegam a meio ficam em espera.
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
     inputs:
       modo:
-        description: 'publicar ou verificar'
-        default: 'publicar'
+        description: 'ciclo, publicar ou verificar'
+        default: 'ciclo'
 permissions:
   contents: write
 concurrency:
@@ -15,9 +18,11 @@ concurrency:
 jobs:
   publicar:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 358
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -27,11 +32,13 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           GRAPH_VERSION: ${{ vars.GRAPH_VERSION }}
-        run: python publicar/publicar.py "${{ github.event.inputs.modo || 'publicar' }}"
-      - name: Guardar resultado
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          python publicar/publicar.py "${{ github.event.inputs.modo || 'ciclo' }}"
+      - name: Guardar resultado
+        if: always()
+        run: |
           git add -A agenda
           if ! git diff --cached --quiet; then
             git commit -m "Agenda: resultado da publicação"
