@@ -1,5 +1,5 @@
 {
-  "quando": "2026-11-08T08:30",
+  "quando": "2026-11-09T11:30",
   "redes": [
     "instagram",
     "facebook"
@@ -11,5 +11,6 @@
     "2026-11-08/0830-story-3.jpg"
   ],
   "legenda": "",
-  "aprovado": false
+  "aprovado": true,
+  "publicar_atrasado": true
 }
