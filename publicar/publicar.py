@@ -8,7 +8,7 @@ Segredos necessários no GitHub (Settings > Secrets and variables > Actions):
   META_TOKEN   token de acesso da Página do Facebook (de longa duração)
   IG_USER_ID   id da conta profissional do Instagram ligada à Página
   FB_PAGE_ID   id da Página do Facebook
-Opcional (variável): GRAPH_VERSION, por omissão v23.0
+Opcional (variável): GRAPH_VERSION, por omissão v25.0
 """
 
 import datetime as dt
@@ -31,7 +31,7 @@ MAX_TENTATIVAS = 3
 TOKEN = os.environ.get("META_TOKEN", "").strip()
 IG = os.environ.get("IG_USER_ID", "").strip()
 PAGE = os.environ.get("FB_PAGE_ID", "").strip()
-VER = os.environ.get("GRAPH_VERSION", "").strip() or "v23.0"
+VER = os.environ.get("GRAPH_VERSION", "").strip() or "v25.0"
 REPO = os.environ.get("GITHUB_REPOSITORY", "miguelcostagomesadvogado-svg/mcg-imagens")
 BRANCH = os.environ.get("GITHUB_REF_NAME", "main")
 API = f"https://graph.facebook.com/{VER}"
