@@ -1,6 +1,7 @@
 # Estado da publicação automática
 
-Ligação à Meta: NÃO CONFIGURADA
+Última verificação: 2026-11-09 09:09 (Lisboa)
+Ligação à Meta: COM ERRO
 
-Faltam os segredos META_TOKEN, IG_USER_ID e FB_PAGE_ID no GitHub.
-As peças aprovadas ficam guardadas na agenda e saem quando a ligação estiver ativa.
+- Página do Facebook: ERRO — 649405248528469: Invalid OAuth access token - Cannot parse access token
+- Instagram: ERRO — 17841461136494724: Invalid OAuth access token - Cannot parse access token
