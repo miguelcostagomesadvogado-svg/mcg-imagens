@@ -1,0 +1,19 @@
+{
+  "quando": "2026-11-09T12:16",
+  "redes": [
+    "instagram"
+  ],
+  "tipo": "story",
+  "imagens": [
+    "destaques/capa-acidentes.jpg",
+    "destaques/story-acidentes.jpg",
+    "destaques/capa-trabalho.jpg",
+    "destaques/story-despedimentos.jpg",
+    "destaques/capa-herancas.jpg",
+    "destaques/story-heranca.jpg"
+  ],
+  "legenda": "",
+  "aprovado": true,
+  "publicar_atrasado": true,
+  "nota": "Republicação das 6 stories de destaques de 8 nov. que expiraram sem arquivo."
+}
