@@ -1,7 +1,8 @@
 # Estado da publicação automática
 
-Última verificação: 2026-11-09 09:09 (Lisboa)
-Ligação à Meta: COM ERRO
+Última verificação: 2026-11-09 09:11 (Lisboa)
+Ligação à Meta: ATIVA
 
-- Página do Facebook: ERRO — 649405248528469: Invalid OAuth access token - Cannot parse access token
-- Instagram: ERRO — 17841461136494724: Invalid OAuth access token - Cannot parse access token
+- Página do Facebook: OK (Advogados Portugal MCG -  Miguel Costa Gomes)
+- Instagram: OK (@mcg.advogado)
+- Limite de publicações do Instagram nas últimas 24 h: [{"quota_usage": 0, "config": {"quota_total": 100, "quota_duration": 86400}}]
