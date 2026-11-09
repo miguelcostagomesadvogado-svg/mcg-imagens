@@ -1,5 +1,5 @@
 {
-  "quando": "2026-11-09T09:30",
+  "quando": "2026-11-09T08:30",
   "redes": [
     "instagram",
     "facebook"
@@ -12,5 +12,5 @@
   ],
   "legenda": "",
   "aprovado": false,
-  "nota": "Stories da manhã; a hora passa para 30 min após a aprovação."
+  "nota": "Stories da manhã; se a aprovação chegar depois das 08h30, a hora passa para 30 min após a aprovação."
 }
