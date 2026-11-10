@@ -9,5 +9,6 @@
     "2026-11-10/2100-story.jpg"
   ],
   "legenda": "",
-  "aprovado": false
+  "aprovado": true,
+  "via": "github"
 }

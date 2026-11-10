@@ -11,5 +11,6 @@
     "2026-11-10/0830-story-3.jpg"
   ],
   "legenda": "",
-  "aprovado": false
+  "aprovado": true,
+  "via": "github"
 }
