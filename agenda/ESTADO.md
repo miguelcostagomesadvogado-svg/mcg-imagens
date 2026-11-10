@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-10 18:00 (Lisboa)
-Publicadas nesta execução: 2026-11-10-1800-mito-testamento.json
+Última execução: 2026-11-10 21:01 (Lisboa)
+Publicadas nesta execução: 2026-11-10-2100-story-divulgacao.json
