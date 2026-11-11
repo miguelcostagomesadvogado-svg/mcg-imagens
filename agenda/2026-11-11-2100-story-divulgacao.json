@@ -9,6 +9,7 @@
     "2026-11-11/2100-story.jpg"
   ],
   "legenda": "",
-  "aprovado": false,
-  "nota": "Divulga a imagem das 18h (o Reel do dia ainda não está gravado)."
+  "aprovado": true,
+  "nota": "Divulga a imagem das 18h (o Reel do dia ainda não está gravado).",
+  "via": "github"
 }
