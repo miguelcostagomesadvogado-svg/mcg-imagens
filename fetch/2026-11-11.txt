@@ -1,0 +1,9 @@
+natal-presentes.jpg https://images.unsplash.com/photo-1758521542325-c6f9c0e0a3cb?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+natal-dinheiro.jpg https://images.unsplash.com/photo-1737093370580-1bc209219a14?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+natal-compras-loira.jpg https://images.unsplash.com/photo-1758520387706-791858e84944?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+natal-compras-renas.jpg https://images.unsplash.com/photo-1641040264379-4e1920585dae?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+natal-compras-rua.jpg https://images.unsplash.com/photo-1758525223844-417102a07caf?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+garantia-telemovel-partido.jpg https://images.unsplash.com/photo-1673713235124-b6d12182da8f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+garantia-maquina-a.jpg https://images.unsplash.com/photo-1702318429376-968e7a347064?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+garantia-maquina-b.jpg https://images.unsplash.com/photo-1548393579-d0b3c338428c?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+garantia-telemovel-mulher.jpg https://images.unsplash.com/photo-1622800563140-61bfb112f998?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
