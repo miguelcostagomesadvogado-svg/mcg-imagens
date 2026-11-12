@@ -1,0 +1,11 @@
+heranca-testa-papeis.jpg https://images.unsplash.com/photo-1710743688495-9a87a64c37b0?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-mesa-papeis.jpg https://images.unsplash.com/photo-1635859890085-ec8cb5466806?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-stress-portatil.jpg https://images.unsplash.com/photo-1752650735615-9829d8008a01?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-idosa-foto.jpg https://images.unsplash.com/photo-1778525256269-44eee40ba881?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-idosa-retrato.jpg https://images.unsplash.com/photo-1733238309041-89a8889cf443?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-cemiterio.jpg https://images.unsplash.com/photo-1489227218286-160175edd769?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-papel-maos.jpg https://images.unsplash.com/photo-1641929182018-6a7a2288e4de?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-escadas-papeis.jpg https://images.unsplash.com/photo-1768877625240-4ceb55d05b12?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+abandono-janela-telefone.jpg https://images.unsplash.com/photo-1684920687347-bf460ae85db6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+abandono-sofa-telefone.jpg https://images.unsplash.com/photo-1740002533936-a962240a066a?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+abandono-fabrica.jpg https://images.unsplash.com/photo-1742967419166-f88003b3d120?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
