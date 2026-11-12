@@ -13,3 +13,5 @@ Todas as fotografias do Unsplash já descarregadas estão registadas em `fetch/*
 
 Evitar também repetir o mesmo modelo (a mesma pessoa) em fotografias diferentes da mesma série
 de fotógrafo. Privilegiar senhoras atraentes, com ar profissional, sempre coerentes com o tema.
+
+- 2026-11-12: heranca-mulher-documento.jpg (capa carrossel), heranca-idosa-retrato.jpg (story 08h30), heranca-mesa-papeis.jpg (story 21h), abandono-sofa-telefone.jpg (imagem 18h)
