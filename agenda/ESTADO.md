@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-13 18:02 (Lisboa)
-Publicadas nesta execução: 2026-11-13-1800-noticia-irs.json
+Última execução: 2026-11-13 21:01 (Lisboa)
+Publicadas nesta execução: 2026-11-13-2100-story-divulgacao.json
