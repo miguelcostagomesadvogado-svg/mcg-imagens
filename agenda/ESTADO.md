@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-13 12:32 (Lisboa)
-Publicadas nesta execução: 2026-11-13-1230-carrossel-compras-online.json
+Última execução: 2026-11-13 18:02 (Lisboa)
+Publicadas nesta execução: 2026-11-13-1800-noticia-irs.json
