@@ -17,3 +17,4 @@ de fotógrafo. Privilegiar senhoras atraentes, com ar profissional, sempre coere
 - 2026-11-12: heranca-mulher-documento.jpg (capa carrossel), heranca-idosa-retrato.jpg (story 08h30), heranca-mesa-papeis.jpg (story 21h), abandono-sofa-telefone.jpg (imagem 18h)
 - 2026-11-13: online-mulher-blazer-cartao.jpg (capa carrossel), online-mulher-cama-cartao.jpg (story 08h30), online-mulher-recebe-encomenda.jpg (story 21h), irs-mulher-contas.jpg (imagem 18h)
 - 2026-11-14: queixa-mulher-estrada-noite.jpg (capa carrossel), queixa-policia-carro.jpg (story 08h30), queixa-mulher-noite-rua.jpg (story 21h), viacao-carros-colisao.jpg (imagem 18h)
+- 2026-11-15: dividas-casal-sofa.jpg (capa carrossel), dividas-mulher-maos-cabeca.jpg (story 21h), achado-notas-chao.jpg (imagem 18h); não usadas: dividas-casal-cozinha.jpg (mesmo casal da capa), achado-mulher-carteira.jpg, achado-carteira-maos.jpg
