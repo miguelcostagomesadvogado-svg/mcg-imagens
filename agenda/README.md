@@ -21,6 +21,7 @@ Cada peça é um ficheiro `AAAA-MM-DD-HHMM-<slug>.json` nesta pasta. A GitHub Ac
 - `imagens`: caminhos no repositório, pela ordem, sempre JPEG.
 - `legenda`: vazia nos stories.
 - `aprovado`: só passa a `true` depois do "sim" do Dr. Miguel.
+- `comentario` (opcional, carrosséis e imagens): texto do primeiro comentário, publicado pela própria página logo a seguir à peça, no Instagram e no Facebook. A API não permite fixar comentários: o Dr. Miguel fixa-o à mão quando puder. Se o comentário falhar, a peça fica publicada na mesma e o erro aparece em `erros_comentario` e no `ESTADO.md`.
 - `publicar_atrasado` (opcional): `true` para publicar mesmo com mais de 6 h de atraso. Sem isso, uma peça atrasada mais de 6 h vai para `atrasadas/` e não sai.
 
 Resultado:

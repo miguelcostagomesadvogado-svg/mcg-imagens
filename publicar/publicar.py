@@ -144,6 +144,30 @@ def fb_publicar(peca):
     raise ErroMeta(f"tipo desconhecido: {tipo}")
 
 
+# ---------- primeiro comentário ----------
+
+def comentar(peca, rede, rid):
+    """Escreve o primeiro comentário (campo 'comentario') logo a seguir à publicação.
+    Não se aplica a stories. Uma falha aqui nunca anula a publicação: fica registada."""
+    texto = (peca.get("comentario") or "").strip()
+    if not texto or peca.get("tipo") == "story" or not rid or rid == "não aplicável":
+        return None
+    feitos = peca.setdefault("comentado", {})
+    if rede in feitos:
+        return None
+    time.sleep(5)  # dá tempo à publicação para ficar disponível
+    try:
+        cid = pedido("POST", f"{rid}/comments", {"message": texto}).get("id")
+        feitos[rede] = cid or "ok"
+        print(f"Comentário OK {rede} {cid}")
+        return None
+    except ErroMeta as e:
+        msg = f"{agora():%Y-%m-%d %H:%M} {rede}: {e}"
+        peca.setdefault("erros_comentario", []).append(msg)
+        print(f"Comentário ERRO {msg}")
+        return msg
+
+
 # ---------- ciclo principal ----------
 
 def ler_hora(txt):
@@ -214,7 +238,7 @@ def main():
         print(f"Ligação à Meta com erro: {e}")
         return
 
-    publicadas, erros = [], []
+    publicadas, erros, erros_coment = [], [], []
     for caminho in sorted(glob.glob(os.path.join(AGENDA, "*.json"))):
         with open(caminho, encoding="utf-8") as f:
             peca = json.load(f)
@@ -237,6 +261,9 @@ def main():
                 rid = ig_publicar(peca) if rede == "instagram" else fb_publicar(peca)
                 feito[rede] = rid or "não aplicável"
                 print(f"OK {os.path.basename(caminho)} {rede} {rid}")
+                erro_c = comentar(peca, rede, rid)
+                if erro_c:
+                    erros_coment.append(f"{os.path.basename(caminho)} — {erro_c}")
             except ErroMeta as e:
                 peca.setdefault("erros", []).append(f"{agora():%Y-%m-%d %H:%M} {rede}: {e}")
                 print(f"ERRO {os.path.basename(caminho)} {rede}: {e}")
@@ -257,9 +284,11 @@ def main():
         linhas.append("Publicadas nesta execução: " + ", ".join(publicadas))
     if erros:
         linhas.append("Com erro (ver agenda/erros/): " + ", ".join(erros))
+    if erros_coment:
+        linhas.append("Primeiro comentário NÃO publicado (a peça saiu): " + "; ".join(erros_coment))
     if glob.glob(os.path.join(AGENDA, "erros", "*.json")):
         linhas.append("Há peças em agenda/erros/ por resolver.")
-    if publicadas or erros:
+    if publicadas or erros or erros_coment:
         estado(linhas)
 
 
