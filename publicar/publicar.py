@@ -304,11 +304,12 @@ def ciclo(minutos=345, intervalo=120):
         git("stash", "-q")
         git("pull", "--rebase", "-q")
         git("stash", "pop", "-q")
-        sys.argv = [sys.argv[0], "publicar"]
-        try:
-            main()
-        except Exception as e:  # nunca deixa o ciclo morrer por uma peça
-            print(f"Erro inesperado: {e}")
+        # Corre num processo novo para usar sempre a versão mais recente deste ficheiro
+        # (alterações feitas durante a execução de ~6 h passam a valer logo).
+        import subprocess
+        r = subprocess.run([sys.executable, os.path.abspath(__file__), "publicar"])
+        if r.returncode != 0:
+            print(f"Erro inesperado (código {r.returncode})")
         git("add", "-A", AGENDA)
         if git("diff", "--cached", "--quiet").returncode != 0:
             git("commit", "-q", "-m", "Agenda: resultado da publicação")
