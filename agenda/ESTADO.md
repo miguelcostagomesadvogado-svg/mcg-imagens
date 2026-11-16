@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-15 21:02 (Lisboa)
-Publicadas nesta execução: 2026-11-15-2100-story-divulgacao.json
+Última execução: 2026-11-16 07:01 (Lisboa)
+Publicadas nesta execução: 2026-11-16-0700-stories-manha.json
