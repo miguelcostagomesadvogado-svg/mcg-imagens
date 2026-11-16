@@ -279,6 +279,31 @@ def main():
                 mover(caminho, "erros")
                 erros.append(os.path.basename(caminho))
 
+    # Peças já publicadas nas últimas 12 h que ficaram sem o primeiro comentário
+    # (ex.: publicadas por uma versão antiga do script): comenta agora, uma única tentativa.
+    for caminho in sorted(glob.glob(os.path.join(AGENDA, "publicado", "*.json"))):
+        with open(caminho, encoding="utf-8") as f:
+            peca = json.load(f)
+        if not peca.get("comentario") or peca.get("erros_comentario") or not peca.get("publicado_em"):
+            continue
+        try:
+            quando_pub = dt.datetime.strptime(peca["publicado_em"], "%Y-%m-%d %H:%M").replace(tzinfo=LX)
+        except ValueError:
+            continue
+        if (agora() - quando_pub).total_seconds() > 12 * 3600:
+            continue
+        mudou = False
+        for rede, rid in (peca.get("feito") or {}).items():
+            if rede in (peca.get("comentado") or {}):
+                continue
+            mudou = True
+            erro_c = comentar(peca, rede, rid)
+            if erro_c:
+                erros_coment.append(f"{os.path.basename(caminho)} — {erro_c}")
+        if mudou:
+            guardar(caminho, peca)
+            publicadas.append(os.path.basename(caminho) + " (só comentário)")
+
     linhas = ["Ligação à Meta: ATIVA", "", f"Última execução: {agora():%Y-%m-%d %H:%M} (Lisboa)"]
     if publicadas:
         linhas.append("Publicadas nesta execução: " + ", ".join(publicadas))
