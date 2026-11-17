@@ -21,11 +21,9 @@
     "instagram": "18356633938265694",
     "facebook": "649405248528469_2030563914665182"
   },
-  "comentado": {},
-  "erros_comentario": [
-    "2026-11-16 20:01 instagram: 18356633938265694/comments: (#10) Application does not have permission for this action",
-    "2026-11-16 20:01 facebook: 649405248528469_2030563914665182/comments: (#200) You do not have sufficient permissions to perform this action"
-  ],
-  "publicado_em": "2026-11-16 20:01",
-  "comentar_agora": true
+  "comentado": {
+    "instagram": "18099180725671714",
+    "facebook": "2030563914665182_1649968983293812"
+  },
+  "publicado_em": "2026-11-16 20:01"
 }
