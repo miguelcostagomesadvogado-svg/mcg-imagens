@@ -14,6 +14,7 @@ Opcional (variável): GRAPH_VERSION, por omissão v25.0
 import datetime as dt
 import glob
 import json
+import re
 import os
 import shutil
 import sys
@@ -168,6 +169,72 @@ def comentar(peca, rede, rid):
         return msg
 
 
+# ---------- Caixinha de perguntas: recolha semanal dos comentários ----------
+
+PERGUNTAS = "perguntas"
+
+
+def recolher_perguntas(forcar=False):
+    """Ao domingo (a partir das 04h00), junta as dúvidas deixadas nos comentários das
+    publicações dos últimos 7 dias em perguntas/AAAA-MM-DD.md, para a "Pergunta da semana".
+    RGPD: guarda só o texto da pergunta — nunca nomes, @ ou identificadores de quem comentou."""
+    hoje = agora()
+    if not forcar and (hoje.weekday() != 6 or hoje.hour < 4):
+        return None
+    destino = os.path.join(PERGUNTAS, f"{hoje:%Y-%m-%d}.md")
+    if os.path.exists(destino):
+        return None
+    limite = hoje - dt.timedelta(days=7)
+    perguntas, vistos = [], set()
+    for caminho in sorted(glob.glob(os.path.join(AGENDA, "publicado", "*.json"))):
+        with open(caminho, encoding="utf-8") as f:
+            peca = json.load(f)
+        if peca.get("tipo") == "story" or not peca.get("publicado_em"):
+            continue
+        try:
+            quando_pub = dt.datetime.strptime(peca["publicado_em"], "%Y-%m-%d %H:%M").replace(tzinfo=LX)
+        except ValueError:
+            continue
+        if quando_pub < limite:
+            continue
+        proprios = {(peca.get("comentario") or "").strip()}
+        for rede, rid in (peca.get("feito") or {}).items():
+            if not rid or rid == "não aplicável":
+                continue
+            try:
+                if rede == "instagram":
+                    dados = pedido("GET", f"{rid}/comments", {"fields": "text,username", "limit": "100"}).get("data", [])
+                    itens = [(c.get("text") or "") for c in dados if c.get("username") != "mcg.advogado"]
+                else:
+                    dados = pedido("GET", f"{rid}/comments", {"fields": "message,from", "limit": "100"}).get("data", [])
+                    itens = [(c.get("message") or "") for c in dados if (c.get("from") or {}).get("id") != PAGE]
+            except ErroMeta as e:
+                print(f"Perguntas: não li {rede} {rid}: {e}")
+                continue
+            for t in itens:
+                t = re.sub(r"@[\w.]+", "", t).strip()
+                if len(t) < 15 or "?" not in t or t in proprios:
+                    continue
+                chave = t.lower()
+                if chave in vistos:
+                    continue
+                vistos.add(chave)
+                perguntas.append((os.path.basename(caminho)[:-5], t))
+    os.makedirs(PERGUNTAS, exist_ok=True)
+    linhas = [f"# Perguntas da semana até {hoje:%d/%m/%Y}", "",
+              "Recolhidas automaticamente dos comentários. Só o texto (sem nomes nem @).",
+              "Responder sempre em termos gerais, sem identificar quem perguntou.", ""]
+    if perguntas:
+        for origem, t in perguntas:
+            linhas.append(f"- ({origem}) {t}")
+    else:
+        linhas.append("- (nenhuma pergunta nos comentários desta semana)")
+    with open(destino, "w", encoding="utf-8") as f:
+        f.write("\n".join(linhas) + "\n")
+    print(f"Perguntas guardadas em {destino}: {len(perguntas)}")
+    return destino
+
+
 # ---------- ciclo principal ----------
 
 def ler_hora(txt):
@@ -228,6 +295,9 @@ def main():
         return
     if modo == "verificar":
         verificar()
+        return
+    if modo == "perguntas":
+        recolher_perguntas(forcar=True)
         return
     # Se a ligação à Meta falhar, não mexe na agenda (as peças não contam tentativas).
     try:
@@ -321,6 +391,11 @@ def main():
             guardar(caminho, peca)
             publicadas.append(os.path.basename(caminho) + " (só comentário)")
 
+    try:
+        recolher_perguntas()
+    except Exception as e:  # a recolha nunca pode travar a publicação
+        print(f"Perguntas: erro {e}")
+
     linhas = ["Ligação à Meta: ATIVA", "", f"Última execução: {agora():%Y-%m-%d %H:%M} (Lisboa)"]
     if publicadas:
         linhas.append("Publicadas nesta execução: " + ", ".join(publicadas))
@@ -353,6 +428,8 @@ def ciclo(minutos=345, intervalo=120):
         if r.returncode != 0:
             print(f"Erro inesperado (código {r.returncode})")
         git("add", "-A", AGENDA)
+        if os.path.isdir(PERGUNTAS):
+            git("add", "-A", PERGUNTAS)
         if git("diff", "--cached", "--quiet").returncode != 0:
             git("commit", "-q", "-m", "Agenda: resultado da publicação")
             for _ in range(3):
