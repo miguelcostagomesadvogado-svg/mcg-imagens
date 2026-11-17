@@ -17,5 +17,8 @@
   },
   "publicado_em": "2026-11-13 18:02",
   "comentario": "Já notou diferença no recibo de vencimento deste mês?",
-  "comentar_agora": true
+  "comentado": {
+    "facebook": "já existia",
+    "instagram": "18003978585013838"
+  }
 }

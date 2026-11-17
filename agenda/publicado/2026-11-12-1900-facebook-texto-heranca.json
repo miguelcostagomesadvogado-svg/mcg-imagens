@@ -13,5 +13,8 @@
   },
   "publicado_em": "2026-11-12 19:00",
   "comentario": "Conhece alguém que herdou dívidas sem saber? Partilhe esta publicação com essa pessoa.",
-  "comentar_agora": true
+  "comentado": {},
+  "erros_comentario": [
+    "2026-11-17 08:54 facebook: 649405248528469_2025133755208198/comments: Unsupported post request. Object with ID '649405248528469_2025133755208198' does not exist, cannot be loaded due to missing permissions, or does not support this operation. Please read the Graph API documentation at https://developers.facebook.com/docs/graph-api"
+  ]
 }
