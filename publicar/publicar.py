@@ -284,14 +284,31 @@ def main():
     for caminho in sorted(glob.glob(os.path.join(AGENDA, "publicado", "*.json"))):
         with open(caminho, encoding="utf-8") as f:
             peca = json.load(f)
-        if not peca.get("comentario") or peca.get("erros_comentario") or not peca.get("publicado_em"):
+        forcar = bool(peca.get("comentar_agora"))
+        if not peca.get("comentario") or not peca.get("publicado_em"):
+            continue
+        if peca.get("erros_comentario") and not forcar:
             continue
         try:
             quando_pub = dt.datetime.strptime(peca["publicado_em"], "%Y-%m-%d %H:%M").replace(tzinfo=LX)
         except ValueError:
             continue
-        if (agora() - quando_pub).total_seconds() > 12 * 3600:
+        if (agora() - quando_pub).total_seconds() > 12 * 3600 and not forcar:
             continue
+        if forcar:
+            # nova tentativa pedida à mão: limpa erros antigos e não repete se o texto já lá estiver
+            peca.pop("comentar_agora", None)
+            peca.pop("erros_comentario", None)
+            for rede, rid in (peca.get("feito") or {}).items():
+                if rede in (peca.get("comentado") or {}):
+                    continue
+                try:
+                    campo = "text" if rede == "instagram" else "message"
+                    lst = pedido("GET", f"{rid}/comments", {"fields": campo, "limit": "50"}).get("data", [])
+                    if any((c.get(campo) or "").strip() == peca["comentario"].strip() for c in lst):
+                        peca.setdefault("comentado", {})[rede] = "já existia"
+                except ErroMeta:
+                    pass
         mudou = False
         for rede, rid in (peca.get("feito") or {}).items():
             if rede in (peca.get("comentado") or {}):
