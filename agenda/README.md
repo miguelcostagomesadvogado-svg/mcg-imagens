@@ -38,3 +38,20 @@ Resultado:
 - `erros/`: peças que falharam 3 vezes (o erro fica no campo `erros`).
 - `atrasadas/`: peças que perderam a hora.
 - `ESTADO.md`: estado da ligação à Meta e da última execução.
+
+## Carrosséis em formato de história (decidido pelo Dr. Miguel, 18 nov. 2026)
+
+Os carrosséis passam a ser um misto: **histórias** e **informativos diretos** (como até aqui), em alternância — cerca de 3 histórias por cada 2 informativos, para não cansar e continuar a aparecer nas pesquisas por temas concretos. Primeiro exemplo: `2026-11-18-1900-carrossel-historia-sofia.json`.
+
+Estrutura da história (6 diapositivos):
+1. Capa com gancho e a protagonista na foto (etiqueta "UMA HISTÓRIA · <ÁREA>", "A história da <Nome>." + DESLIZE).
+2. O conflito (o que aconteceu).
+3. O que ela/ele pensou (o erro comum).
+4. e 5. A viragem: o direito, em linguagem simples, com artigo confirmado no texto da lei (na dúvida, não citar).
+6. Fecho com contactos, "Guarde e partilhe" e a linha "Caso ilustrativo, com nome fictício."
+
+Regras:
+- Nomes fictícios e comuns; nunca nomes de clientes atuais; nunca apresentar como caso real do escritório.
+- Nunca terminar com uma vitória do advogado ("ganhámos"); a história acaba no direito que a pessoa tinha.
+- A mesma modelo em todas as fotos da história (é a protagonista); idade, género e cenário coerentes com o texto (ex.: modelo jovem → poucos anos de casa).
+- Legenda conta a história em resumo, cita os artigos e leva "Caso ilustrativo, com nome fictício." antes da nota informativa.
