@@ -22,3 +22,4 @@ de fotógrafo. Privilegiar senhoras atraentes, com ar profissional, sempre coere
 - 2026-11-17: ipc-mae-abraco-cama.jpg (capa carrossel 19h00, pensão e inflação)
 - 2026-11-19: ipc-mulher-mesa-chamada.jpg (capa carrossel 19h00, aumento da pensão); não usadas: ipc-mae-filha-bolas.jpg, ipc-mulher-mesa-telemovel.jpg
 - 2026-11-17: avos-avo-abraca-neta.jpg (capa carrossel 12h30), avos-avo-pequeno-almoco.jpg (story 21h), domicilio-mulher-porta.jpg (capa carrossel 20h00), domicilio-porta-noite.jpg (story 22h), emails-mulher-portatil-2.jpg (imagem 10h30), fiador-mulher-sofa.jpg (imagem 18h); não usadas: emails-mulher-portatil.jpg, fiador-papel-maos.jpg (já usada a 16 nov.)
+- 2026-11-18: sofia-carro-mao-cabeca.jpg (capa carrossel 19h00, história da Sofia — despedimento), sofia-carro-janela-2.jpg (diapositivo 2), sofia-carro-janela.jpg (diapositivo 3); a mesma modelo é a protagonista da história — não voltar a usar esta modelo noutras peças
