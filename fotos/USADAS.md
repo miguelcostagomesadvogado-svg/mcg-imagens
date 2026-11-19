@@ -26,3 +26,6 @@ de fotógrafo. Privilegiar senhoras atraentes, com ar profissional, sempre coere
 
 ## 2026-11-18
 ferias-mulher-hotel-mala.jpg (capa 12h30), ferias-mulher-mala-relva.jpg (story 21h), procuracao-mulher-assina.jpg (10h30), fatura-senhora-calculadora.jpg (18h), infiltracao-balde-gota.jpg (capa 20h), infiltracao-bolor.jpg (story 22h)
+
+## 2026-11-19
+partilha-mulher-janela-casa.jpg (capa 12h30), partilha-mulher-chaves.jpg (story 21h), penhora-mulher-tapa-rosto.jpg (capa 20h), penhora-mulher-maos-rosto.jpg (story 22h), desconto-mulher-ferramentas.jpg (10h30), seguro-entrega-chave.jpg (18h); não usadas: partilha-mulher-porta-antiga.jpg (mulher a rir), seguro-maos-chave.jpg
