@@ -19,7 +19,7 @@ Cada peça é um ficheiro `AAAA-MM-DD-HHMM-<slug>.json` nesta pasta. A GitHub Ac
 - `redes`: `instagram`, `facebook` ou ambas.
 - `tipo`: `carrossel` (2 a 20 imagens 1080x1350), `imagem` (1 imagem), `story` (1 ou mais imagens 1080x1920, cada uma publicada como story), `texto` (só Facebook, sem imagens).
 - `imagens`: caminhos no repositório, pela ordem, sempre JPEG.
-- `legenda`: vazia nos stories.
+- `legenda`: vazia nos stories. **No máximo 5 hashtags** (limite do Instagram): sempre #Portugal #DefendaOsSeusDireitos e mais 3 do tema, com acentos corretos, sem localidades nem países. O publicador corta automaticamente o que passar de 5, mas a legenda deve já vir certa.
 - `aprovado`: só passa a `true` depois do "sim" do Dr. Miguel.
 - `comentario` (opcional, carrosséis e imagens): texto do primeiro comentário, publicado pela própria página logo a seguir à peça, no Instagram e no Facebook. A API não permite fixar comentários: o Dr. Miguel fixa-o à mão quando puder. Se o comentário falhar, a peça fica publicada na mesma e o erro aparece em `erros_comentario` e no `ESTADO.md`.
 - `publicar_atrasado` (opcional): `true` para publicar mesmo com mais de 6 h de atraso. Sem isso, uma peça atrasada mais de 6 h vai para `atrasadas/` e não sai.

@@ -92,8 +92,18 @@ def ig_esperar(cid):
     raise ErroMeta(f"contentor {cid} não ficou pronto a tempo")
 
 
+def limitar_hashtags(leg, maximo=5):
+    """O Instagram só aceita 5 hashtags: mantém as 5 primeiras e retira as restantes."""
+    vistos = [0]
+    def troca(m):
+        vistos[0] += 1
+        return m.group(0) if vistos[0] <= maximo else ""
+    leg = re.sub(r"(?<!\S)#\w+", troca, leg)
+    return re.sub(r"[ \t]+(\n|$)", r"\1", re.sub(r"[ \t]{2,}", " ", leg))
+
+
 def ig_publicar(peca):
-    tipo, imgs, leg = peca["tipo"], peca.get("imagens", []), peca.get("legenda", "")
+    tipo, imgs, leg = peca["tipo"], peca.get("imagens", []), limitar_hashtags(peca.get("legenda", ""))
     if tipo == "texto":
         return None  # o Instagram não aceita publicações só com texto
     if tipo == "story":
@@ -123,7 +133,7 @@ def ig_publicar(peca):
 # ---------- Facebook ----------
 
 def fb_publicar(peca):
-    tipo, imgs, leg = peca["tipo"], peca.get("imagens", []), peca.get("legenda", "")
+    tipo, imgs, leg = peca["tipo"], peca.get("imagens", []), limitar_hashtags(peca.get("legenda", ""))
     if tipo == "texto":
         return pedido("POST", f"{PAGE}/feed", {"message": leg})["id"]
     if tipo == "story":
