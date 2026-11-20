@@ -6,7 +6,7 @@ import sys, json, math, subprocess, os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-W, H, FPS, DUR = 1080, 1920, 30, 17.0
+W, H, FPS, DUR = 1080, 1920, 30, 17.8
 NAVY = (15, 31, 61); NAVY2 = (22, 44, 84); GOLD = (201, 162, 74); CREAM = (244, 239, 230)
 INTER = '/usr/share/fonts/opentype/inter/'
 def F(w, s): return ImageFont.truetype(INTER + {'r': 'Inter-Regular.otf', 's': 'Inter-SemiBold.otf', 'b': 'Inter-Bold.otf', 'd': 'InterDisplay-Bold.otf'}[w], s)
@@ -62,7 +62,13 @@ class Reel:
         s.shade = vgrad(H, (0, 0, 0), NAVY, 0.12, 0.9, 2.2)
         s.by = cfg.get('barra_y', 880)
         s.navybg = vgrad(H, NAVY2, NAVY, 1, 1).convert('RGB')
-        m = miguel_navy(); m = m.resize((W, round(m.height * W / m.width)), Image.LANCZOS)
+        cr = Image.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'cartao-resposta.png')).convert('RGBA')
+        s.cartao = cr.resize((900, round(cr.height * 900 / cr.width)), Image.LANCZOS)  # cartão da marca enviado na 1.ª resposta (sem morada)
+        m = miguel_navy()
+        av = m.crop((560, 60, 1080, 580)).resize((104, 104), Image.LANCZOS).convert('RGBA')  # fotografia de perfil
+        mk = Image.new('L', (416, 416), 0); ImageDraw.Draw(mk).ellipse((0, 0, 415, 415), fill=255)
+        av.putalpha(mk.resize((104, 104), Image.LANCZOS)); s.avatar = av
+        m = m.resize((W, round(m.height * W / m.width)), Image.LANCZOS)
         s.miguel = m.crop((0, 0, W, 1150))
         s.fade_m = vgrad(1150, NAVY, NAVY, 0, 1)
         s.fade_m.putalpha(Image.fromarray((np.clip((np.linspace(0, 1, 1150) - .55) / .45, 0, 1) ** 1.4 * 255).astype('uint8')[:, None].repeat(W, 1)))
@@ -93,31 +99,36 @@ class Reel:
         cx, cy = 130, y0 + 65  # lupa
         d.ellipse((cx - 22, cy - 26, cx + 14, cy + 10), outline=(95, 99, 104, int(255 * k)), width=6)
         d.line((cx + 10, cy + 6, cx + 30, cy + 26), fill=(95, 99, 104, int(255 * k)), width=8)
-        q = s.c['pesquisa']; n = int(len(q) * max(0, min(1, (t - .6) / 2.3)))
+        q = s.c['pesquisa']; n = int(len(q) * max(0, min(1, (t - .5) / 1.9)))
         fq = F('r', 44 if len(q) < 30 else 39)
         d.text((185, y0 + 38), q[:n], font=fq, fill=(32, 33, 36, int(255 * k)))
-        if t < 3.3 and int(t * 3) % 2 == 0:
+        if t < 2.9 and int(t * 3) % 2 == 0:
             x = 185 + d.textlength(q[:n], font=fq) + 4
             d.line((x, y0 + 34, x, y0 + 96), fill=(26, 115, 232, 255), width=4)
         # resultado
-        if t > 3.1:
-            k2 = seg(t, 3.1, 3.55); ry = s.by + 170 + (1 - k2) * 120
-            press = 1 - 0.03 * math.sin(math.pi * max(0, min(1, (t - 4.15) / .35)))
-            card = Image.new('RGBA', (W - 120, 330), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
+        if t > 2.6:
+            k2 = seg(t, 2.6, 3.05); ry = s.by + 170 + (1 - k2) * 120
+            CH = 350  # cartão ao estilo do Perfil de Empresa no Google (ficha), sem estrelas nem marcas
+            card = Image.new('RGBA', (W - 120, CH), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
             rr(cd, (0, 0, card.width - 1, card.height - 1), 34, fill=(255, 255, 255, 255), outline=GOLD, width=5)
-            cd.ellipse((40, 40, 120, 120), fill=NAVY); cd.text((80, 80), 'MCG', font=F('b', 26), fill=GOLD, anchor='mm')
-            cd.text((145, 42), 'MCG Advogado', font=F('s', 30), fill=(32, 33, 36))
-            cd.text((145, 82), 'Miguel Costa Gomes · Advogado', font=F('r', 26), fill=(95, 99, 104))
-            cd.text((40, 150), s.c['resultado'], font=F('b', 40), fill=(26, 13, 171))
-            cd.text((40, 210), 'Em todo o país, presencialmente ou', font=F('r', 30), fill=(77, 81, 86))
-            cd.text((40, 252), 'por videochamada · +351 960 225 890', font=F('r', 30), fill=(77, 81, 86))
+            card.alpha_composite(s.avatar, (34, 30))
+            cd.text((160, 36), 'MCG Advogados - Miguel Costa Gomes', font=F('s', 31), fill=(32, 33, 36))
+            cd.text((160, 82), 'Advogado · seg. a sex., 8h–21h', font=F('r', 27), fill=(95, 99, 104))
+            cd.text((36, 152), s.c['resultado'], font=F('b', 38), fill=(26, 13, 171))
+            cd.text((36, 204), 'Em todo o país, presencialmente ou por videochamada', font=F('r', 26), fill=(77, 81, 86))
+            bx, by2, fb, pos = 36, 262, F('s', 27), {}
+            for lab in ('Ligar', 'WhatsApp', 'Instagram', 'Facebook'):
+                bw = cd.textlength(lab, font=fb) + 52
+                rr(cd, (bx, by2, bx + bw, by2 + 58), 29, fill=(232, 240, 254) if lab == 'Ligar' else (255, 255, 255), outline=(218, 220, 224), width=2)
+                cd.text((bx + 26, by2 + 13), lab, font=fb, fill=(26, 115, 232)); pos[lab] = bx + bw / 2; bx += bw + 14
+            press = 1 - 0.03 * math.sin(math.pi * max(0, min(1, (t - 3.65) / .35)))
             if press < 1: card = card.resize((round(card.width * press), round(card.height * press)), Image.BILINEAR)
             card.putalpha(card.getchannel('A').point(lambda v: int(v * k2)))
-            im.alpha_composite(card, (round((W - card.width) / 2), round(ry + (330 - card.height) / 2)))
-            if t > 4.1:  # toque
-                p = min(1, (t - 4.1) / .6); r = 24 + 60 * p; tx = W - 230
-                d.ellipse((tx - r, ry + 175 - r, tx + r, ry + 175 + r), outline=(26, 115, 232, int(230 * (1 - p))), width=7)
-                d.ellipse((tx - 22, ry + 153, tx + 22, ry + 197), fill=(26, 115, 232, int(150 * (1 - p))))
+            im.alpha_composite(card, (round((W - card.width) / 2), round(ry + (CH - card.height) / 2)))
+            if t > 3.6:  # toque no botão WhatsApp
+                p = min(1, (t - 3.6) / .6); r = 24 + 50 * p; tx = 60 + pos['WhatsApp']; ty = ry + by2 + 29
+                d.ellipse((tx - r, ty - r, tx + r, ty + r), outline=(26, 115, 232, int(230 * (1 - p))), width=7)
+                d.ellipse((tx - 20, ty - 20, tx + 20, ty + 20), fill=(26, 115, 232, int(150 * (1 - p))))
         return im.convert('RGB')
 
     # ---------- cena 2: passo a passo ----------
@@ -127,10 +138,10 @@ class Reel:
         d.text((80, 200), 'DEPOIS DO CONTACTO', font=F('b', 34), fill=GOLD + (int(255 * a),))
         d.text((80, 252), 'O que acontece', font=F('d', 84), fill=CREAM + (int(255 * a),))
         d.text((80, 345), 'a seguir', font=F('d', 84), fill=CREAM + (int(255 * a),))
-        y0, gap, step = 505, 190, 1.45
-        cur = int((t - .35) // step)
+        y0, gap, step = 505, 190, 1.2
+        cur = int((t - .3) // step)
         for i, (tit, sub) in enumerate(s.steps):
-            ts = .35 + i * step
+            ts = .3 + i * step
             if t < ts: break
             k = seg(t, ts, ts + .35); y = y0 + i * gap; x = 80 + (1 - k) * 120
             if i > 0:
@@ -162,13 +173,54 @@ class Reel:
         if t > .5: pill(d, W / 2, 1410, 'Saiba mais na legenda', F('s', 38))
         return im.convert('RGB')
 
+    # ---------- cena 1b: a primeira resposta (o que o cliente recebe logo) ----------
+    def scene_chat(s, t):
+        im = Image.new('RGBA', (W, H), (239, 233, 223, 255)); d = ImageDraw.Draw(im)
+        d.rectangle((0, 0, W, 230), fill=NAVY)
+        av = s.avatar.resize((96, 96), Image.LANCZOS); im.alpha_composite(av, (50, 108))
+        d.text((170, 112), 'MCG Advogado', font=F('b', 40), fill=(255, 255, 255))
+        d.text((170, 162), 'Advogado · C.P. 11209P', font=F('r', 28), fill=CREAM)
+        f = F('b', 30); lab = 'A PRIMEIRA RESPOSTA'; tw = d.textlength(lab, font=f)
+        rr(d, ((W - tw) / 2 - 26, 262, (W + tw) / 2 + 26, 318), 28, fill=NAVY, outline=GOLD, width=2)
+        d.text(((W - tw) / 2, 272), lab, font=f, fill=GOLD)
+        # mensagem do cliente (à direita)
+        k = seg(t, .15, .45); fm = F('r', 38)
+        lines = wrap(d, s.c['mensagem'], fm, 640); bw = max(d.textlength(l, font=fm) for l in lines) + 64
+        bh = len(lines) * 50 + 44; x1 = W - 50; y = 360 + (1 - k) * 40
+        bub = Image.new('RGBA', (W, H), (0, 0, 0, 0)); bd = ImageDraw.Draw(bub)
+        rr(bd, (x1 - bw, y, x1, y + bh), 28, fill=(220, 236, 214, int(255 * k)))
+        for j, l in enumerate(lines): bd.text((x1 - bw + 32, y + 22 + j * 50), l, font=fm, fill=(32, 33, 36, int(255 * k)))
+        im.alpha_composite(bub); d = ImageDraw.Draw(im)
+        ry = 360 + bh + 40
+        if .75 < t < 1.2:  # a escrever...
+            rr(d, (50, ry, 210, ry + 80), 28, fill=(255, 255, 255))
+            for j in range(3):
+                a = .5 + .5 * math.sin((t * 9) - j)
+                d.ellipse((85 + j * 38 - 10, ry + 30, 85 + j * 38 + 10, ry + 50), fill=(140, 140, 140, int(120 + 135 * a)))
+        if t >= 1.2:  # resposta com a imagem da marca
+            k2 = seg(t, 1.2, 1.5); card = s.cartao
+            lines2 = [('Dr. Miguel Costa Gomes', F('b', 40), (32, 33, 36)), ('Advogado · C.P. 11209P', F('r', 36), (32, 33, 36)),
+                      ('MCG Advogado', F('r', 36), (32, 33, 36)), ('+351 960 225 890', F('s', 36), (26, 115, 232)),
+                      ('miguelcostagomes-11209P@adv.oa.pt', F('r', 32), (26, 115, 232)), ('instagram.com/mcg.advogado', F('r', 32), (26, 115, 232))]
+            bh2 = 24 + card.height + 24 + len(lines2) * 54 + 16
+            b2 = Image.new('RGBA', (W, H), (0, 0, 0, 0)); b2d = ImageDraw.Draw(b2); yy = ry + (1 - k2) * 40
+            rr(b2d, (40, yy, 40 + card.width + 40, yy + bh2), 28, fill=(255, 255, 255, 255))
+            b2.alpha_composite(card, (60, round(yy + 22)))
+            for j, (txt, ft, col) in enumerate(lines2):
+                kk = seg(t, 1.45 + j * .12, 1.7 + j * .12)
+                b2d.text((68, yy + 24 + card.height + 22 + j * 54), txt, font=ft, fill=col + (int(255 * kk),))
+            b2.putalpha(b2.getchannel('A').point(lambda v: int(v * k2))); im.alpha_composite(b2)
+        return im.convert('RGB')
+
     def frame(s, t):
-        A, B = 5.0, 14.6
+        A, B, C = 4.4, 7.6, 15.4
         if t < A - .25: return s.scene_search(t)
-        if t < A: return Image.blend(s.scene_search(t), s.scene_steps(0), (t - (A - .25)) / .25)
-        if t < B - .25: return s.scene_steps(t - A)
-        if t < B: return Image.blend(s.scene_steps(t - A), s.scene_end(0), (t - (B - .25)) / .25)
-        return s.scene_end(t - B)
+        if t < A: return Image.blend(s.scene_search(t), s.scene_chat(0), (t - (A - .25)) / .25)
+        if t < B - .25: return s.scene_chat(t - A)
+        if t < B: return Image.blend(s.scene_chat(t - A), s.scene_steps(0), (t - (B - .25)) / .25)
+        if t < C - .25: return s.scene_steps(t - B)
+        if t < C: return Image.blend(s.scene_steps(t - B), s.scene_end(0), (t - (C - .25)) / .25)
+        return s.scene_end(t - C)
 
 def render(cfg, out):
     r = Reel(cfg)

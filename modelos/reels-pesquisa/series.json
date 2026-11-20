@@ -6,7 +6,8 @@
   "resultado": "Partilhas e heranças",
   "documentos": "Certidão de óbito e cadernetas prediais",
   "foto": "fotos/reelpesq-partilhas-mulher-oculos.jpg",
-  "foco_y": 0.2
+  "foco_y": 0.2,
+  "mensagem": "Boa tarde. Vivo fora do país e preciso de tratar de umas partilhas em Portugal."
  },
  {
   "slug": "divorcio",
@@ -16,7 +17,8 @@
   "documentos": "Certidão de casamento e lista de bens",
   "foto": "fotos/reelpesq-divorcio-mulher-parede.jpg",
   "foco_y": 0.5,
-  "barra_y": 250
+  "barra_y": 250,
+  "mensagem": "Boa tarde. Preciso de ajuda com um divórcio."
  },
  {
   "slug": "alimentos",
@@ -25,7 +27,8 @@
   "resultado": "Pensão de alimentos",
   "documentos": "Acordo ou sentença e despesas dos filhos",
   "foto": "fotos/reelpesq-alimentos-mae-sala.jpg",
-  "foco_y": 0.25
+  "foco_y": 0.25,
+  "mensagem": "Olá. A pensão de alimentos dos meus filhos já não chega para as despesas."
  },
  {
   "slug": "acidente-trabalho",
@@ -35,7 +38,8 @@
   "documentos": "Relatórios médicos e boletins de alta",
   "foto": "fotos/reelpesq-acidente-mulher-exterior.jpg",
   "foco_y": 0.4,
-  "barra_y": 250
+  "barra_y": 250,
+  "mensagem": "Boa tarde. Tive um acidente de trabalho e não sei o que fazer."
  },
  {
   "slug": "despedimento",
@@ -44,7 +48,8 @@
   "resultado": "Direito do trabalho",
   "documentos": "Contrato, recibos e carta recebida",
   "foto": "fotos/reelpesq-despedimento-mulher-azul.jpg",
-  "foco_y": 0.1
+  "foco_y": 0.1,
+  "mensagem": "Olá. Recebi hoje uma carta de despedimento."
  },
  {
   "slug": "penal",
@@ -54,6 +59,7 @@
   "documentos": "A notificação que recebeu",
   "foto": "fotos/reelpesq-penal-mulher-noite.jpg",
   "foco_y": 0.0,
-  "barra_y": 250
+  "barra_y": 250,
+  "mensagem": "Boa noite. Fui constituída arguida e estou preocupada."
  }
 ]
