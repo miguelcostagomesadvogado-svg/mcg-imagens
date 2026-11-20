@@ -8,7 +8,7 @@ CSS=f"""
 @font-face{{font-family:Inter;src:url(file:///usr/share/fonts/opentype/inter/Inter-SemiBold.otf);font-weight:600}}
 @font-face{{font-family:Inter;src:url(file:///usr/share/fonts/opentype/inter/Inter-Bold.otf);font-weight:700}}
 *{{margin:0;padding:0;box-sizing:border-box}}
-body{{width:1080px;height:1350px;background:#0b0820;font-family:Inter;color:#f3eefc;position:relative;overflow:hidden}}
+body{{width:1080px;height:1350px;background:#0f1f3d;font-family:Inter;color:#f3eefc;position:relative;overflow:hidden}}
 .glow1{{position:absolute;width:900px;height:900px;left:-300px;top:-250px;background:radial-gradient(circle,rgba(255,62,200,.30),transparent 65%)}}
 .glow2{{position:absolute;width:900px;height:900px;right:-350px;top:380px;background:radial-gradient(circle,rgba(54,230,255,.22),transparent 65%)}}
 .gsvg{{position:absolute;left:0;bottom:0;z-index:1}}
@@ -24,10 +24,10 @@ h1{{font-family:AB;font-size:74px;line-height:1.08;margin-top:22px;color:#fff;te
 h1 em{{font-style:normal;color:#e3c167;text-shadow:0 0 22px rgba(227,193,103,.6)}}
 p{{font-size:37px;line-height:1.48;text-align:justify;hyphens:none;margin-top:30px}}
 p b{{color:#36e6ff;font-weight:700}}
-.law{{align-self:flex-start;display:inline-block;margin-top:26px;font-family:Mono;font-size:26px;color:#0b0820;background:#e3c167;padding:8px 16px;letter-spacing:1px}}
+.law{{align-self:flex-start;display:inline-block;margin-top:26px;font-family:Mono;font-size:26px;color:#0f1f3d;background:#e3c167;padding:8px 16px;letter-spacing:1px}}
 .card{{margin-top:34px;border:3px solid #36e6ff;border-radius:18px;padding:28px 34px;background:rgba(54,230,255,.07);box-shadow:0 0 30px rgba(54,230,255,.35),inset 0 0 30px rgba(54,230,255,.12);font-family:Mono;font-size:34px;line-height:1.7}}
 .card span{{color:#36e6ff}} .card strong{{color:#e3c167}}
-.bubble{{margin-top:34px;background:#fff;color:#0b0820;border-radius:26px;padding:36px 40px;font-family:AB;font-size:52px;line-height:1.18;position:relative;box-shadow:0 0 40px rgba(255,62,200,.5)}}
+.bubble{{margin-top:34px;background:#fff;color:#0f1f3d;border-radius:26px;padding:36px 40px;font-family:AB;font-size:52px;line-height:1.18;position:relative;box-shadow:0 0 40px rgba(255,62,200,.5)}}
 .bubble:after{{content:'';position:absolute;left:70px;bottom:-34px;border:18px solid transparent;border-top:20px solid #fff;border-left:22px solid #fff}}
 .x{{margin-top:56px;display:flex;align-items:center;gap:22px;font-family:AB;font-size:46px;color:#ff4b6e;text-shadow:0 0 18px rgba(255,75,110,.8)}}
 .x i{{font-style:normal;width:74px;height:74px;border:4px solid #ff4b6e;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:52px;box-shadow:0 0 18px rgba(255,75,110,.7)}}
@@ -35,16 +35,16 @@ p b{{color:#36e6ff;font-weight:700}}
 .foot{{position:absolute;left:70px;right:70px;bottom:44px;display:flex;justify-content:space-between;font-weight:600;font-size:21px;letter-spacing:4px;color:#b9b2d6;z-index:5}}
 .foot span:last-child{{color:#e3c167}}
 .photo{{position:absolute;inset:0;background-size:cover;background-position:center}}
-.shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,8,32,.35) 0%,rgba(11,8,32,0) 30%,rgba(11,8,32,.75) 58%,#0b0820 80%)}}
+.shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,31,61,.35) 0%,rgba(15,31,61,0) 30%,rgba(15,31,61,.75) 58%,#0f1f3d 80%)}}
 .bottom{{position:absolute;left:80px;right:80px;bottom:130px;z-index:3}}
-.sticker{{position:absolute;right:0;top:-150px;transform:rotate(-8deg);font-family:AB;font-size:40px;color:#fff;padding:14px 26px;border:4px solid #ff3ec8;border-radius:14px;background:rgba(11,8,32,.55);box-shadow:0 0 26px #ff3ec8,inset 0 0 18px rgba(255,62,200,.6);text-shadow:0 0 14px #ff3ec8}}
+.sticker{{position:absolute;right:0;top:-150px;transform:rotate(-8deg);font-family:AB;font-size:40px;color:#fff;padding:14px 26px;border:4px solid #ff3ec8;border-radius:14px;background:rgba(15,31,61,.55);box-shadow:0 0 26px #ff3ec8,inset 0 0 18px rgba(255,62,200,.6);text-shadow:0 0 14px #ff3ec8}}
 .swipe{{margin-top:26px;font-family:Mono;font-size:30px;letter-spacing:4px;color:#36e6ff;text-shadow:0 0 12px rgba(54,230,255,.8)}}
 .contact{{margin-top:22px;font-size:27px;line-height:1.6}}
 .contact b{{color:#e3c167}}
 .mini{{margin-top:16px;font-size:21px;color:#b9b2d6}}
 svg{{display:block}}
 """
-FOOT='<div style="position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to top,#0b0820 55%,rgba(11,8,32,0));z-index:4"></div><div class="foot"><span>MIGUEL COSTA GOMES · ADVOGADO</span><span>@MCG.ADVOGADO</span></div>'
+FOOT='<div style="position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(to top,#0f1f3d 55%,rgba(15,31,61,0));z-index:4"></div><div class="foot"><span>MIGUEL COSTA GOMES · ADVOGADO</span><span>@MCG.ADVOGADO</span></div>'
 def hud(n):
     bars=''.join(f'<i class="{"on" if k<=n else ""}"></i>' for k in range(1,7))
     return f'<div class="hud"><span>▶ UMA HISTÓRIA · FAMÍLIA</span><span class="lv">{n}/6<span class="bar">{bars}</span></span></div>'
