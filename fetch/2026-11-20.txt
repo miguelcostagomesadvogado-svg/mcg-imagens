@@ -1,0 +1,9 @@
+bf-capa.jpg https://images.unsplash.com/photo-1773859096601-7d9b0a92bc7f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+bf-fecho.jpg https://images.unsplash.com/photo-1773859096469-47c30ba2d875?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+bf-story.jpg https://images.unsplash.com/photo-1773859096339-dd1ca5158835?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+chuva-capa.jpg https://images.unsplash.com/photo-1637765910844-dee48a9d1f63?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+chuva-fecho.jpg https://images.unsplash.com/photo-1637765910812-d466eae168f1?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+chuva-story.jpg https://images.unsplash.com/photo-1763710774140-1a3cee96e726?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+feriado-loja.jpg https://images.unsplash.com/photo-1687405271242-d34f3d57564b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+credito-chaves.jpg https://images.unsplash.com/photo-1742318592061-15c5f19e1e47?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+credito-mulher.jpg https://images.unsplash.com/photo-1743865319702-f01078a80822?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
