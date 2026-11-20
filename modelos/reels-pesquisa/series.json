@@ -1,0 +1,59 @@
+[
+ {
+  "slug": "partilhas",
+  "area": "Partilhas",
+  "pesquisa": "advogado em Portugal para partilhas",
+  "resultado": "Partilhas e heranças",
+  "documentos": "Certidão de óbito e cadernetas prediais",
+  "foto": "fotos/reelpesq-partilhas-mulher-oculos.jpg",
+  "foco_y": 0.2
+ },
+ {
+  "slug": "divorcio",
+  "area": "Divórcio",
+  "pesquisa": "advogado para divórcio",
+  "resultado": "Divórcio e família",
+  "documentos": "Certidão de casamento e lista de bens",
+  "foto": "fotos/reelpesq-divorcio-mulher-parede.jpg",
+  "foco_y": 0.5,
+  "barra_y": 250
+ },
+ {
+  "slug": "alimentos",
+  "area": "Pensão de alimentos",
+  "pesquisa": "advogado pensão de alimentos",
+  "resultado": "Pensão de alimentos",
+  "documentos": "Acordo ou sentença e despesas dos filhos",
+  "foto": "fotos/reelpesq-alimentos-mae-sala.jpg",
+  "foco_y": 0.25
+ },
+ {
+  "slug": "acidente-trabalho",
+  "area": "Acidente de trabalho",
+  "pesquisa": "advogado acidente de trabalho",
+  "resultado": "Acidentes de trabalho",
+  "documentos": "Relatórios médicos e boletins de alta",
+  "foto": "fotos/reelpesq-acidente-mulher-exterior.jpg",
+  "foco_y": 0.4,
+  "barra_y": 250
+ },
+ {
+  "slug": "despedimento",
+  "area": "Despedimento",
+  "pesquisa": "advogado despedimento",
+  "resultado": "Direito do trabalho",
+  "documentos": "Contrato, recibos e carta recebida",
+  "foto": "fotos/reelpesq-despedimento-mulher-azul.jpg",
+  "foco_y": 0.1
+ },
+ {
+  "slug": "penal",
+  "area": "Penal",
+  "pesquisa": "advogado constituída arguida",
+  "resultado": "Defesa em processo penal",
+  "documentos": "A notificação que recebeu",
+  "foto": "fotos/reelpesq-penal-mulher-noite.jpg",
+  "foco_y": 0.0,
+  "barra_y": 250
+ }
+]
