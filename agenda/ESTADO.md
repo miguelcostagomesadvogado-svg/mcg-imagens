@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-20 15:02 (Lisboa)
-Publicadas nesta execução: 2026-11-20-1500-stories-tarde.json
+Última execução: 2026-11-20 18:01 (Lisboa)
+Publicadas nesta execução: 2026-11-20-1800-comenta-comissao-credito-habitacao.json
