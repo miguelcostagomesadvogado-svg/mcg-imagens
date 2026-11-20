@@ -18,7 +18,7 @@ jobs:
             while read -r name url; do
               [ -z "$name" ] && continue
               [ -f "fotos/$name" ] && continue
-              curl -sSL --fail -o "fotos/$name" "$url&w=1600"
+              curl -sSL --fail -o "fotos/$name" "$url&w=1600" || { echo "FALHOU: $name"; rm -f "fotos/$name"; }
             done < "$f"
           done
       - name: Guardar
