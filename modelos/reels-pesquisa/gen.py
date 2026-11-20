@@ -6,7 +6,7 @@ import sys, json, math, subprocess, os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
-W, H, FPS, DUR = 1080, 1920, 30, 17.8
+W, H, FPS, DUR = 1080, 1920, 30, 23.0
 NAVY = (15, 31, 61); NAVY2 = (22, 44, 84); GOLD = (201, 162, 74); CREAM = (244, 239, 230)
 INTER = '/usr/share/fonts/opentype/inter/'
 def F(w, s): return ImageFont.truetype(INTER + {'r': 'Inter-Regular.otf', 's': 'Inter-SemiBold.otf', 'b': 'Inter-Bold.otf', 'd': 'InterDisplay-Bold.otf'}[w], s)
@@ -110,15 +110,15 @@ class Reel:
         cx, cy = 130, y0 + 65  # lupa
         d.ellipse((cx - 22, cy - 26, cx + 14, cy + 10), outline=(95, 99, 104, int(255 * k)), width=6)
         d.line((cx + 10, cy + 6, cx + 30, cy + 26), fill=(95, 99, 104, int(255 * k)), width=8)
-        q = s.c['pesquisa']; n = int(len(q) * max(0, min(1, (t - .4) / 1.6)))
+        q = s.c['pesquisa']; n = int(len(q) * max(0, min(1, (t - .4) / 2.0)))
         fq = F('r', 44 if len(q) < 30 else 39)
         d.text((185, y0 + 38), q[:n], font=fq, fill=(32, 33, 36, int(255 * k)))
-        if t < 2.5 and int(t * 3) % 2 == 0:
+        if t < 2.9 and int(t * 3) % 2 == 0:
             x = 185 + d.textlength(q[:n], font=fq) + 4
             d.line((x, y0 + 34, x, y0 + 96), fill=(26, 115, 232, 255), width=4)
         # resultado
-        if t > 2.2:
-            k2 = seg(t, 2.2, 2.65); ry = s.by + 170 + (1 - k2) * 120
+        if t > 2.6:
+            k2 = seg(t, 2.6, 3.05); ry = s.by + 170 + (1 - k2) * 120
             CH = 350  # cartão ao estilo do Perfil de Empresa no Google (ficha), sem estrelas nem marcas
             card = Image.new('RGBA', (W - 120, CH), (0, 0, 0, 0)); cd = ImageDraw.Draw(card)
             rr(cd, (0, 0, card.width - 1, card.height - 1), 34, fill=(255, 255, 255, 255), outline=GOLD, width=5)
@@ -132,12 +132,12 @@ class Reel:
                 bw = cd.textlength(lab, font=fb) + 52
                 rr(cd, (bx, by2, bx + bw, by2 + 58), 29, fill=(232, 240, 254) if lab == 'Ligar' else (255, 255, 255), outline=(218, 220, 224), width=2)
                 cd.text((bx + 26, by2 + 13), lab, font=fb, fill=(26, 115, 232)); pos[lab] = bx + bw / 2; bx += bw + 14
-            press = 1 - 0.03 * math.sin(math.pi * max(0, min(1, (t - 3.25) / .35)))
+            press = 1 - 0.03 * math.sin(math.pi * max(0, min(1, (t - 3.65) / .35)))
             if press < 1: card = card.resize((round(card.width * press), round(card.height * press)), Image.BILINEAR)
             card.putalpha(card.getchannel('A').point(lambda v: int(v * k2)))
             im.alpha_composite(card, (round((W - card.width) / 2), round(ry + (CH - card.height) / 2)))
-            if t > 3.2:  # toque no botão WhatsApp
-                p = min(1, (t - 3.2) / .6); r = 24 + 50 * p; tx = 60 + pos['WhatsApp']; ty = ry + by2 + 29
+            if t > 3.6:  # toque no botão WhatsApp
+                p = min(1, (t - 3.6) / .6); r = 24 + 50 * p; tx = 60 + pos['WhatsApp']; ty = ry + by2 + 29
                 d.ellipse((tx - r, ty - r, tx + r, ty + r), outline=(26, 115, 232, int(230 * (1 - p))), width=7)
                 d.ellipse((tx - 20, ty - 20, tx + 20, ty + 20), fill=(26, 115, 232, int(150 * (1 - p))))
         return im.convert('RGB')
@@ -149,7 +149,7 @@ class Reel:
         d.text((80, 160), 'DEPOIS DO CONTACTO', font=F('b', 34), fill=GOLD + (int(255 * a),))
         d.text((80, 210), 'O que acontece', font=F('d', 80), fill=CREAM + (int(255 * a),))
         d.text((80, 298), 'a seguir', font=F('d', 80), fill=CREAM + (int(255 * a),))
-        y0, gap, step = 440, 150, 1.0
+        y0, gap, step = 440, 150, 1.1
         starts = [.3, .3] + [.3 + (i - 1) * step for i in range(2, 6)]
         cur = max(i for i in range(6) if t >= starts[i]) if t >= .3 else 0
         for i, (tit, sub) in enumerate(s.steps):
@@ -167,10 +167,10 @@ class Reel:
             al = int(255 * k * (1 if active else .72))
             d.text((x + 120, y), tit, font=F('b', 48), fill=(255, 255, 255, al))
             d.text((x + 120, y + 60), sub, font=F('r', 34), fill=CREAM[:3] + (int(al * .85),))
-        if t > 4.5:  # lema e pílula
-            a2 = seg(t, 4.5, 4.9)
+        if t > 5.0:  # lema e pílula
+            a2 = seg(t, 5.0, 5.4)
             d.text((W / 2, 1350), 'O Advogado é o escudo e a espada do seu Cliente.', font=F('s', 36), fill=GOLD + (int(255 * a2),), anchor='mm')
-            if t > 4.7: pill(d, W / 2, 1400, 'Saiba mais na legenda', F('s', 38))
+            if t > 5.2: pill(d, W / 2, 1400, 'Saiba mais na legenda', F('s', 38))
         return im.convert('RGB')
 
     # ---------- cena 1b: a primeira resposta (WhatsApp e Direct), mensagem completa da marca ----------
@@ -180,7 +180,7 @@ class Reel:
               ('📷', 'instagram.com/mcg.advogado', 'r', 31, (26, 115, 232)),
               ('👍', 'facebook.com/advogados.portugal.', 'r', 31, (26, 115, 232)), (None, 'mcg.miguelcostagomes', 'r', 31, (26, 115, 232))]
 
-    def _linhas(s, layer, x, y, t, t0, step=.2, lh=52):
+    def _linhas(s, layer, x, y, t, t0, step=.3, lh=52):
         d = ImageDraw.Draw(layer)
         for j, (em, txt, w, sz, col) in enumerate(s.LINHAS):
             kk = seg(t, t0 + j * step, t0 + j * step + .25); al = int(255 * kk)
@@ -223,30 +223,30 @@ class Reel:
         for j, l in enumerate(lines): bd.text((x1 - bw + 32, y + 20 + j * 48), l, font=fm, fill=tc + (int(255 * k),))
         im.alpha_composite(bub); d = ImageDraw.Draw(im)
         ry = 335 + bh + 30
-        if .5 < t < .9:  # a escrever...
+        if .6 < t < 1.2:  # a escrever...
             rr(d, (50, ry, 210, ry + 80), 28, fill=(239, 239, 239) if ig else (255, 255, 255))
             for j in range(3):
                 a = .5 + .5 * math.sin((t * 9) - j)
                 d.ellipse((85 + j * 38 - 10, ry + 30, 85 + j * 38 + 10, ry + 50), fill=(140, 140, 140, int(120 + 135 * a)))
-        if t >= .9:
-            k2 = seg(t, .9, 1.2); L = Image.new('RGBA', (W, H), (0, 0, 0, 0)); Ld = ImageDraw.Draw(L); yy = ry + (1 - k2) * 40
+        if t >= 1.2:
+            k2 = seg(t, 1.2, 1.5); L = Image.new('RGBA', (W, H), (0, 0, 0, 0)); Ld = ImageDraw.Draw(L); yy = ry + (1 - k2) * 40
             if ig:  # cartão do perfil do Instagram (fotografia + mcg.advogado) e depois o texto
                 ph = s.perfil; rr(Ld, (40, yy, 40 + ph.width, yy + ph.height + 110), 30, fill=(239, 239, 239))
                 L.alpha_composite(ph, (40, round(yy)))
                 Ld.text((70, yy + ph.height + 16), 'mcg.advogado', font=F('s', 36), fill=(0, 0, 0)); Ld.text((70, yy + ph.height + 62), 'Instagram', font=F('r', 28), fill=(115, 115, 115))
                 y2 = yy + ph.height + 126
                 rr(Ld, (40, y2, 40 + 760, y2 + len(s.LINHAS) * 50 + 36), 30, fill=(239, 239, 239))
-                s._linhas(L, 70, y2 + 18, t, 1.25, lh=50)
+                s._linhas(L, 70, y2 + 18, t, 1.6, lh=50)
             else:  # imagem da marca e o texto completo
                 card = s.cartao; bh2 = 22 + card.height + 22 + len(s.LINHAS) * 52 + 14
                 rr(Ld, (40, yy, 40 + card.width + 40, yy + bh2), 28, fill=(255, 255, 255))
                 L.alpha_composite(card, (60, round(yy + 22)))
-                s._linhas(L, 68, yy + 22 + card.height + 20, t, 1.2)
+                s._linhas(L, 68, yy + 22 + card.height + 20, t, 1.5)
             L.putalpha(L.getchannel('A').point(lambda v: int(v * k2))); im.alpha_composite(L)
         return im.convert('RGB')
 
     def frame(s, t):
-        A, B, C = 4.0, 8.1, 12.2
+        A, B, C = 4.6, 10.1, 15.6
         if t < A - .25: return s.scene_search(t)
         if t < A: return Image.blend(s.scene_search(t), s.scene_chat(0, 'wa'), (t - (A - .25)) / .25)
         if t < B - .25: return s.scene_chat(t - A, 'wa')
