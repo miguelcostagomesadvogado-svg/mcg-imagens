@@ -1,0 +1,5 @@
+gta-mulher-telefone-neon.jpg https://images.unsplash.com/photo-1590506357340-4f2d8f5da5cd?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+gta-mulher-vermelho.jpg https://images.unsplash.com/photo-1612520541271-4c949285c869?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+gta-mulher-telemovel-escuro.jpg https://images.unsplash.com/photo-1600527487326-cab0c8e3d831?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+gta-mulher-luz-rosa.jpg https://images.unsplash.com/photo-1615511676788-240d40160fbc?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+gta-mulher-sofa-roxo.jpg https://images.unsplash.com/photo-1597938430467-c7a5f65c24f2?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
