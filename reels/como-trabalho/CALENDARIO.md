@@ -13,4 +13,3 @@ comentário de `modelos/reels-pesquisa/legendas.md`.
 | ter. 1 dez. 2026 | reel-pesquisa-alimentos.mp4 |
 | qui. 3 dez. 2026 | reel-pesquisa-penal.mp4 |
 
-No dia de cada Reel, o pacote diário das redes lembra-o de manhã, com o ficheiro, a legenda e o comentário.
