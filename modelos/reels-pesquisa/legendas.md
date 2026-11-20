@@ -1,6 +1,39 @@
 # Série de Reels «Como trabalho» — legendas e primeiros comentários
 
-Vídeos sem som (17 s): juntar a música no editor do Instagram. Publicar à mão no Instagram e no Facebook.
+Vídeos sem som (23 s): juntar a música no editor do Instagram. Publicar à mão no Instagram e no Facebook.
+
+## Em todo o país — reel-pesquisa-portugal.mp4
+
+**Legenda**
+
+```
+«Advogado em Portugal» é a pesquisa de quem precisa de ajuda e não sabe por onde começar. Antes do primeiro passo, é bom saber o que vem a seguir:
+
+1. Contacto por telefone, WhatsApp ou e-mail.
+2. Resposta e marcação da reunião, presencial ou por videochamada.
+3. Lista do que trazer: documentos e cartas que recebeu.
+4. Reunião: análise do caso e das opções.
+5. Honorários por escrito, claros, antes de avançar.
+6. Procuração assinada e o caso avança.
+
+Família, sucessões, laboral, acidentes de trabalho e penal, entre outras áreas.
+
+Miguel Costa Gomes · Advogado · C.P. 11209P
++20 anos de experiência como Advogado
+E-mail: miguelcostagomes-11209P@adv.oa.pt
+Telefone / WhatsApp: +351 960 225 890
+Contacto presencial ou por videoconferência (WhatsApp)
+
+Conteúdo informativo. Não dispensa a análise do caso concreto por um advogado.
+
+#Portugal #DefendaOsSeusDireitos #advogado #direitos #apoiojurídico
+```
+
+**Primeiro comentário**
+
+```
+Já alguma vez procurou um advogado na internet? Sim ou não?
+```
 
 ## Partilhas — reel-pesquisa-partilhas.mp4
 

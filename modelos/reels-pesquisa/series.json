@@ -1,5 +1,15 @@
 [
  {
+  "slug": "portugal",
+  "area": "Em todo o país",
+  "pesquisa": "advogado em Portugal",
+  "resultado": "Família, heranças, trabalho e penal",
+  "documentos": "Documentos e cartas que recebeu",
+  "foto": "fotos/reelpesq-portugal-mulher-janela.jpg",
+  "foco_y": 0.15,
+  "mensagem": "Boa tarde. Preciso de um advogado e não sei por onde começar."
+ },
+ {
   "slug": "partilhas",
   "area": "Partilhas",
   "pesquisa": "advogado em Portugal para partilhas",
