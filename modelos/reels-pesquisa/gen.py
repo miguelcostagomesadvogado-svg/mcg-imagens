@@ -158,7 +158,7 @@ class Reel:
         fq = F('s', 44)
         for j, ln in enumerate(['O Advogado é o escudo', 'e a espada do seu Cliente.']):
             d.text((W / 2, 1185 + j * 60), ln, font=fq, fill=GOLD + (int(255 * a),), anchor='mm')
-        d.text((W / 2, 1340), 'Família · Sucessões · Laboral · Acidentes de trabalho · Penal', font=F('r', 31), fill=CREAM + (int(220 * a),), anchor='mm')
+        d.text((W / 2, 1340), 'Família · Sucessões · Laboral · Acidentes de trabalho · Penal, entre outras', font=F('r', 28), fill=CREAM + (int(220 * a),), anchor='mm')
         if t > .5: pill(d, W / 2, 1410, 'Saiba mais na legenda', F('s', 38))
         return im.convert('RGB')
 
