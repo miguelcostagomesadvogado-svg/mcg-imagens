@@ -13,3 +13,7 @@ comentário de `modelos/reels-pesquisa/legendas.md`.
 | ter. 1 dez. 2026 | reel-pesquisa-alimentos.mp4 |
 | qui. 3 dez. 2026 | reel-pesquisa-penal.mp4 |
 
+
+**Nunca publicar estes Reels automaticamente** (decisão do Dr. Miguel, 20 nov. 2026): a música é importante e é ele
+que a escolhe. No dia de cada Reel, às 08h47, uma tarefa agendada envia-lhe o vídeo, a legenda e o primeiro
+comentário; ele verifica e publica à mão no Instagram e no Facebook, à hora que entender.
