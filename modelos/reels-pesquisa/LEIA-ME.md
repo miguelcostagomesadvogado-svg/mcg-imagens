@@ -6,12 +6,12 @@ passo a passo, o que acontece depois do contacto. 17,8 s, 1080x1920, 30 fps, sem
 - Gerador: `gen.py` (Pillow + ffmpeg). `python3 gen.py series.json <pasta-saida> [slug]`
 - Uma entrada por área em `series.json`: slug, area, pesquisa, resultado, documentos, foto, foco_y, barra_y (opcional:
   250 quando a cara da modelo está baixa na foto e a caixa de pesquisa a tapava; por omissão 880).
-- Cenas: 0–4,4 s pesquisa (foto da modelo + barra genérica + cartão ao estilo da ficha Google
-  «MCG Advogados - Miguel Costa Gomes» com a fotografia de perfil do Instagram/ficha, botões Ligar · WhatsApp ·
-  Instagram · Facebook e toque em WhatsApp); 4,4–7,6 s «A primeira resposta» (mensagem da cliente, campo
-  `mensagem` do series.json, e a resposta com o cartão da marca `cartao-resposta.png`, sem a morada, e os
-  contactos, como o Dr. Miguel responde no WhatsApp e no Direct); 7,6–15,4 s «O que acontece a seguir»
-  (6 passos, 1,2 s cada); 15,4–17,8 s fecho com a foto do Dr. Miguel em navy, lema e pílula.
+- Cenas (17,8 s): 0–4 s pesquisa (cartão ao estilo da ficha Google com a foto de perfil; toque em WhatsApp);
+  4–8,1 s «A primeira resposta · no WhatsApp» e 8,1–12,2 s «· no Direct do Instagram»: a mensagem da cliente
+  (campo `mensagem`) e a resposta COMPLETA da marca, como o Dr. Miguel a envia (cartão MCG no WhatsApp; cartão do
+  perfil mcg.advogado no Direct; nome, cédula, MCG Advogado, telefone, e-mail, Instagram e Facebook — sem a morada,
+  que não entra nas redes); linhas a aparecer devagar para as pessoas reconhecerem a marca; 12,2–17,8 s os 6 passos,
+  o lema e a pílula «Saiba mais na legenda» (o fecho com a foto saiu para caber nos 18 s).
 - 20 nov. 2026: o Dr. Miguel NÃO quer o resultado a remeter para o site (ainda não está online); remeter
   para a ficha Google, o Instagram ou o Facebook (facebook.com/advogados.portugal.mcg.miguelcostagomes).
 - Vídeos: `../../reels/como-trabalho/`. Legendas e primeiros comentários: `legendas.md` / `legendas.json`.
