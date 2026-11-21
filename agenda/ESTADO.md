@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-21 10:31 (Lisboa)
-Publicadas nesta execução: 2026-11-21-1030-pode-devolucao-online.json
+Última execução: 2026-11-21 11:02 (Lisboa)
+Publicadas nesta execução: 2026-11-21-1100-carrossel-rita-playstation.json
