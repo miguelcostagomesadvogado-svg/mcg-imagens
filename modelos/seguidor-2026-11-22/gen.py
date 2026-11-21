@@ -48,12 +48,12 @@ FOOT='<div style="position:absolute;left:0;right:0;bottom:0;height:120px;backgro
 def doc(css,body,h=1350):
     return f'<!DOCTYPE html><html><head><meta charset="utf-8"><style>{BASE}{css} body{{height:{h}px}}</style></head><body>{body}</body></html>'
 
-def pode(foto,pos,pergunta,veredicto,texto,lei,qsize=58):
-    return doc(PKG,f'''<div class="photo" style="background-image:url(file://{F}{foto});background-position:{pos};height:720px;bottom:auto"></div>
-<div style="position:absolute;left:0;right:0;top:420px;height:320px;background:linear-gradient(to bottom,rgba(15,31,61,0),#0f1f3d)"></div>
+def pode(foto,pos,pergunta,veredicto,texto,lei,qsize=58,ph=720,top=620):
+    return doc(PKG,f'''<div class="photo" style="background-image:url(file://{F}{foto});background-size:1080px auto;background-position:{pos};height:{ph}px;bottom:auto"></div>
+<div style="position:absolute;left:0;right:0;top:{ph-260}px;height:280px;background:linear-gradient(to bottom,rgba(15,31,61,0),#0f1f3d)"></div>
 <div style="position:absolute;top:50px;left:70px;z-index:5;font-family:AB;font-size:34px;background:#e3c167;color:#0f1f3d;padding:10px 22px;letter-spacing:1px">PODE OU NÃO PODE?</div>
 <div style="position:absolute;top:56px;right:70px;z-index:5;font-family:Mono;font-size:26px;color:#0f1f3d;background:#f1d9a8;padding:8px 16px;transform:rotate(3deg)">PERGUNTA DE UM SEGUIDOR</div>
-<div style="position:absolute;left:80px;right:80px;top:620px;z-index:3">
+<div style="position:absolute;left:80px;right:80px;top:{top}px;z-index:3">
 <h1 style="font-size:{qsize}px">{pergunta}</h1>
 <div style="font-family:AB;font-size:96px;color:#e3c167;margin-top:18px">{veredicto}</div>
 <p style="font-size:33px;margin-top:10px">{texto}</p>
@@ -63,10 +63,10 @@ P={
    'Os vizinhos foram de férias e os filhos fazem festas até de madrugada. Posso fazer queixa?','PODE.',
    'Entre as <b>23h e as 7h</b>, a polícia pode mandar parar o barulho de imediato. Menores sozinhos ou em risco? Qualquer pessoa pode avisar a CPCJ.',
    'DL n.º 9/2007, art. 24.º',56),
- '2026-11-23/1330-imagem': pode('garantia-mulher-carro-vermelho.jpg','center 52%',
-   'Fiz a revisão do meu Porsche numa oficina Mercedes. A marca pode tirar-me a garantia?','NÃO PODE.',
+ '2026-11-23/1330-imagem': pode('garantia-mulher-desportivo-amarelo.jpg','0 -580px',
+   'Revisão do Porsche numa oficina Mercedes. A marca pode tirar-me a garantia?','NÃO PODE.',
    'Revisões fora da rede oficial não fazem perder a garantia, se cumprir as <b>especificações do fabricante</b>. As reparações em garantia fazem-se na marca.',
-   'Regras UE da concorrência · Reg. (UE) 461/2010',56),
+   'Regras UE da concorrência · Reg. (UE) 461/2010',56,ph=842,top=700),
 }
 with sync_playwright() as p:
     b=p.chromium.launch(executable_path='/usr/bin/google-chrome',args=['--no-sandbox','--allow-file-access-from-files'])
