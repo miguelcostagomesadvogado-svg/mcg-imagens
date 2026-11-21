@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-21 11:02 (Lisboa)
-Publicadas nesta execução: 2026-11-21-1100-carrossel-rita-playstation.json
+Última execução: 2026-11-21 12:31 (Lisboa)
+Publicadas nesta execução: 2026-11-21-1230-carrossel-clara-quadro-falso.json
