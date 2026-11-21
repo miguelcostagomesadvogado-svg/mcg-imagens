@@ -33,3 +33,6 @@ partilha-mulher-janela-casa.jpg (capa 12h30), partilha-mulher-chaves.jpg (story 
 ## 2026-11-20 — Reels «Como trabalho» (pesquisa + passo a passo)
 reelpesq-partilhas-mulher-oculos.jpg, reelpesq-divorcio-mulher-parede.jpg, reelpesq-alimentos-mae-sala.jpg, reelpesq-acidente-mulher-exterior.jpg, reelpesq-despedimento-mulher-azul.jpg, reelpesq-penal-mulher-noite.jpg; não usadas: reelpesq-cand02 (parece menor — nunca usar), reelpesq-cand05, reelpesq-cand10, reelpesq-cand12, reelpesq-cand11 (de costas, Pequim — não usar); a cand04 falhou o download
 - 2026-11-20 (Reel «advogado em Portugal»): reelpesq-portugal-mulher-janela.jpg; não usadas: reelpt-cand01 a 07 e 09 (a cand04 parece muito jovem — não usar)
+
+## 2026-11-21
+falso-mulher-quadro-parede.jpg (capa 12h30), falso-mulher-museu.jpg (story 21h), chuva-mulher-retrato.jpg (capa 20h), chuva-mulher-janela.jpg (story 22h), devolve-mulher-cadeira.jpg (10h30), fora-mulher-telefone-hotel.jpg (18h); miguel-cover.jpg nos fechos; não usadas: falso-mulher-galeria-escura.jpg, chuva-mulher-vidro.jpg, devolve-mulher-fita-caixa.jpg
