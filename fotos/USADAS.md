@@ -36,3 +36,6 @@ reelpesq-partilhas-mulher-oculos.jpg, reelpesq-divorcio-mulher-parede.jpg, reelp
 
 ## 2026-11-21
 falso-mulher-quadro-parede.jpg (capa 12h30), falso-mulher-museu.jpg (story 21h), chuva-mulher-retrato.jpg (capa 20h), chuva-mulher-janela.jpg (story 22h), devolve-mulher-cadeira.jpg (10h30), fora-mulher-telefone-hotel.jpg (18h); miguel-cover.jpg nos fechos; não usadas: falso-mulher-galeria-escura.jpg, chuva-mulher-vidro.jpg, devolve-mulher-fita-caixa.jpg
+
+## 2026-11-22
+persi-mulher-carta-cozinha.jpg (capa 12h30, história da Joana), persi-mulher-abraca-papeis.jpg (fecho 12h30), persi-mulher-mesa-pequeno-almoco.jpg (story 21h) — a mesma modelo; heranca-ue-mulher-blazer.jpg (capa 20h, história da Teresa, Património), heranca-ue-mulher-mala.jpg (fecho 20h), heranca-ue-mulher-documentos.jpg (story 22h) — a mesma modelo; imagem-mae-fotografa-filha.jpg (10h30), pais-idosos-maos.jpg (18h)
