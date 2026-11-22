@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-22 07:02 (Lisboa)
-Publicadas nesta execução: 2026-11-22-0700-stories-persi.json
+Última execução: 2026-11-22 10:32 (Lisboa)
+Publicadas nesta execução: 2026-11-22-1030-pode-fotos-escola.json
