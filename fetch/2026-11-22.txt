@@ -1,0 +1,8 @@
+persi-mulher-carta-cozinha.jpg https://images.unsplash.com/photo-1758523419155-9436f8715a94?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+persi-mulher-abraca-papeis.jpg https://images.unsplash.com/photo-1758523419206-e44d618d08fd?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+persi-mulher-mesa-pequeno-almoco.jpg https://images.unsplash.com/photo-1758522487495-e56edf04c3cc?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-ue-mulher-blazer.jpg https://images.unsplash.com/photo-1787724778715-618f47b368dd?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-ue-mulher-mala.jpg https://images.unsplash.com/photo-1787724778611-61f138ab0807?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+heranca-ue-mulher-documentos.jpg https://images.unsplash.com/photo-1787724779319-3ebd1c848bee?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+imagem-mae-fotografa-filha.jpg https://images.unsplash.com/photo-1790881317287-54ffe689a854?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+pais-idosos-maos.jpg https://images.unsplash.com/photo-1694009514875-025cd00ed625?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
