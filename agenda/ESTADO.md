@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-23 21:31 (Lisboa)
-Publicadas nesta execução: 2026-11-23-2130-story-caixinha.json
+Última execução: 2026-11-23 22:02 (Lisboa)
+Publicadas nesta execução: 2026-11-23-2200-story-divulgacao-b.json
