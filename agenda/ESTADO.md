@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-23 20:02 (Lisboa)
-Publicadas nesta execução: 2026-11-23-2000-carrossel-daniela-natal-incumprimento.json
+Última execução: 2026-11-23 21:00 (Lisboa)
+Publicadas nesta execução: 2026-11-23-2100-story-divulgacao-a.json
