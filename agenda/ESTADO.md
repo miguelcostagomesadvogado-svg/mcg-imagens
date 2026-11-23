@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-23 13:31 (Lisboa)
-Publicadas nesta execução: 2026-11-23-1330-pode-revisao-garantia.json
+Última execução: 2026-11-23 15:01 (Lisboa)
+Publicadas nesta execução: 2026-11-23-1500-stories-natal-incumprimento.json
