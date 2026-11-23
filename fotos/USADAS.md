@@ -39,3 +39,6 @@ falso-mulher-quadro-parede.jpg (capa 12h30), falso-mulher-museu.jpg (story 21h),
 
 ## 2026-11-22
 persi-mulher-carta-cozinha.jpg (capa 12h30, história da Joana), persi-mulher-abraca-papeis.jpg (fecho 12h30), persi-mulher-mesa-pequeno-almoco.jpg (story 21h) — a mesma modelo; heranca-ue-mulher-blazer.jpg (capa 20h, história da Teresa, Património), heranca-ue-mulher-mala.jpg (fecho 20h), heranca-ue-mulher-documentos.jpg (story 22h) — a mesma modelo; imagem-mae-fotografa-filha.jpg (10h30), pais-idosos-maos.jpg (18h)
+
+## 2026-11-23
+lesao-mulher-palete.jpg (capa 12h30 e crachá do fecho, história da Carla), lesao-mulher-armazem-caixas.jpg (story 21h), natal-mae-filha-cama2.jpg (capa 20h, história da Daniela), natal-mae-filha-cama.jpg (fecho 20h) — a mesma modelo; natal-mae-filha-chao.jpg (story 22h), legitima-mae-filha-abraco.jpg (10h30), alcool-mulher-conduz-reflexo.jpg (18h); não usadas: lesao-mulher-armazem-pc.jpg, legitima-mae-filha-parque.jpg, alcool-mulher-conduz-noite.jpg
