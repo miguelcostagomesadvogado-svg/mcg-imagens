@@ -1,5 +1,5 @@
-noite-sentenca-mulher-assina.jpg https://images.unsplash.com/photo-1562564055-71e051d33c19?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
-noite-casa-chave-porta.jpg https://images.unsplash.com/photo-1733244766159-f58f4184fd38?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+noite-sentenca-mulher-aneis.jpg https://images.unsplash.com/photo-1695326463444-2d176c0dd979?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
+noite-casa-azulejos-portas.jpg https://images.unsplash.com/photo-1762786924370-d8b59fb8d274?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 noite-mae-filho-aeroporto.jpg https://images.unsplash.com/photo-1788631934038-cf693439986e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 noite-mae-filha-portatil.jpg https://images.unsplash.com/photo-1752652012935-e490eb25bf32?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
 noite-mulher-portatil-cama.jpg https://images.unsplash.com/photo-1631456172053-cc01d5dd7f2a?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb
