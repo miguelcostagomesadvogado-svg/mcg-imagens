@@ -42,3 +42,6 @@ persi-mulher-carta-cozinha.jpg (capa 12h30, história da Joana), persi-mulher-ab
 
 ## 2026-11-23
 lesao-mulher-palete.jpg (capa 12h30 e crachá do fecho, história da Carla), lesao-mulher-armazem-caixas.jpg (story 21h), natal-mae-filha-cama2.jpg (capa 20h, história da Daniela), natal-mae-filha-cama.jpg (fecho 20h) — a mesma modelo; natal-mae-filha-chao.jpg (story 22h), legitima-mae-filha-abraco.jpg (10h30), alcool-mulher-conduz-reflexo.jpg (18h); não usadas: lesao-mulher-armazem-pc.jpg, legitima-mae-filha-parque.jpg, alcool-mulher-conduz-noite.jpg
+
+## 2026-11-24
+menor-mae-filho-sofa, menor-mae-filho-retrato, menor-mae-filho-tv, faturas-empresaria-fato, faturas-empresaria-retrato, faturas-empresaria-caderno, credito-mulher-cartao, senhorio-chave-porta
