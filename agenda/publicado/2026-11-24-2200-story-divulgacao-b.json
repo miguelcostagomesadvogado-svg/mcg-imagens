@@ -1,0 +1,19 @@
+{
+  "quando": "2026-11-24T22:00",
+  "redes": [
+    "instagram",
+    "facebook"
+  ],
+  "tipo": "story",
+  "imagens": [
+    "2026-11-24/2200-story.jpg"
+  ],
+  "legenda": "",
+  "aprovado": true,
+  "via": "github",
+  "feito": {
+    "instagram": "17871398379694980",
+    "facebook": "1443487477871385"
+  },
+  "publicado_em": "2026-11-24 22:00"
+}
