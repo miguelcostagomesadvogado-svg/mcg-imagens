@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-24 18:00 (Lisboa)
-Publicadas nesta execução: 2026-11-24-1800-comenta-credito-consumo.json
+Última execução: 2026-11-24 20:03 (Lisboa)
+Publicadas nesta execução: 2026-11-24-2000-carrossel-patrimonio-leonor-faturas.json
