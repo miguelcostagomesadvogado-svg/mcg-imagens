@@ -6,3 +6,4 @@ faturas-empresaria-secretaria.jpg https://images.unsplash.com/photo-175859830452
 faturas-empresaria-caderno.jpg https://images.unsplash.com/photo-1758518729929-8210d3b0839e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
 credito-mulher-cartao.jpg https://images.unsplash.com/photo-1758524944006-ba8116008496?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
 senhorio-chave-porta.jpg https://images.unsplash.com/photo-1735547876935-7be80eae1c88?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+faturas-empresaria-retrato.jpg https://images.unsplash.com/photo-1758598306913-5cd682b9e53b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
