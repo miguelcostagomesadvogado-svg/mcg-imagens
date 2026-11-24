@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-24 15:01 (Lisboa)
-Publicadas nesta execução: 2026-11-24-1500-stories-leonor-faturas.json
+Última execução: 2026-11-24 18:00 (Lisboa)
+Publicadas nesta execução: 2026-11-24-1800-comenta-credito-consumo.json
