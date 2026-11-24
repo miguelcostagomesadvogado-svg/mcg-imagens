@@ -19,3 +19,6 @@ O que o torna bom:
 Regra de marca (Dr. Miguel, 20 nov. 2026): criar arte, mas PRIVILEGIAR SEMPRE O AZUL-NAVY como fundo
 (#0F1F3D / #10203F, gradientes navy). Nada de fundos pretos. modelos/tint_navy.py converte um fundo
 quase preto já renderizado em navy, se for preciso corrigir peças.
+
+Paleta (Dr. Miguel, 24 nov. 2026): seguir ../PALETA.md — navy #0F1F3D, dourado #E3C167, marfim #F6F1E6,
+bordô #7A1F2B só no selo «Património», azul-névoa #B9C3DC no texto secundário.

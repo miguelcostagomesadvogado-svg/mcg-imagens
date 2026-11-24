@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFont, ImageFilter
 
 W, H, FPS, DUR = 1080, 1920, 30, 23.0
-NAVY = (15, 31, 61); NAVY2 = (22, 44, 84); GOLD = (201, 162, 74); CREAM = (244, 239, 230)
+NAVY = (15, 31, 61); NAVY2 = (22, 44, 84); GOLD = (227, 193, 103); CREAM = (246, 241, 230)  # paleta MCG 24 nov. 2026: #E3C167 e #F6F1E6
 INTER = '/usr/share/fonts/opentype/inter/'
 def F(w, s): return ImageFont.truetype(INTER + {'r': 'Inter-Regular.otf', 's': 'Inter-SemiBold.otf', 'b': 'Inter-Bold.otf', 'd': 'InterDisplay-Bold.otf'}[w], s)
 REPO = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
