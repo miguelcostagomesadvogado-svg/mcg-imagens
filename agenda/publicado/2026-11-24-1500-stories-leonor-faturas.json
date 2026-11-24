@@ -1,0 +1,21 @@
+{
+  "quando": "2026-11-24T15:00",
+  "redes": [
+    "instagram",
+    "facebook"
+  ],
+  "tipo": "story",
+  "imagens": [
+    "2026-11-24/1500-story-1.jpg",
+    "2026-11-24/1500-story-2.jpg",
+    "2026-11-24/1500-story-3.jpg"
+  ],
+  "legenda": "",
+  "aprovado": true,
+  "via": "github",
+  "feito": {
+    "instagram": "17958454971269201,17891198766486354,18406067062201449",
+    "facebook": "1195653112804600,1722228136145073,2480682829409301"
+  },
+  "publicado_em": "2026-11-24 15:01"
+}
