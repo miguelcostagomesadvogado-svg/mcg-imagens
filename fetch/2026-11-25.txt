@@ -1,0 +1,7 @@
+recibo-loja-tablet.jpg https://images.unsplash.com/photo-1753161029695-f1d1e6881257?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+recibo-loja-cabides.jpg https://images.unsplash.com/photo-1753161029492-0644556055cf?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+recibo-loja-balcao.jpg https://images.unsplash.com/photo-1753161029001-153c43be9eb7?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+renda-telemovel-mesa.jpg https://images.unsplash.com/photo-1713947506242-8fcae733d158?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+renda-cozinha-cartao.jpg https://images.unsplash.com/photo-1758522484692-efa6ce38a25f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+heranca-fotografias-mesa.jpg https://images.unsplash.com/photo-1758272422305-39a02e94273c?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+oe-secretaria-telemovel.jpg https://images.unsplash.com/photo-1738566495547-6979a67a1fc9?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
