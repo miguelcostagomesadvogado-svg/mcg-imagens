@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-25 07:02 (Lisboa)
-Publicadas nesta execução: 2026-11-25-0700-stories-joana-recibo.json
+Última execução: 2026-11-25 10:32 (Lisboa)
+Publicadas nesta execução: 2026-11-25-1030-estrangeiro-aceitar-heranca.json
