@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-26 07:02 (Lisboa)
-Publicadas nesta execução: 2026-11-26-0700-stories-beatriz-colacao.json
+Última execução: 2026-11-26 10:32 (Lisboa)
+Publicadas nesta execução: 2026-11-26-1030-pode-ferias-alteradas.json
