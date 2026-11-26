@@ -2,5 +2,5 @@
 
 Ligação à Meta: ATIVA
 
-Última execução: 2026-11-26 03:31 (Lisboa)
-Publicadas nesta execução: 2026-11-26-0330-story-noite-nacionalidade-filhos.json
+Última execução: 2026-11-26 07:02 (Lisboa)
+Publicadas nesta execução: 2026-11-26-0700-stories-beatriz-colacao.json
