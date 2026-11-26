@@ -285,10 +285,12 @@ def recolher_comentarios(forcar=False):
             pass
     limite = agora() - dt.timedelta(days=DIAS_COMENT)
     novos = 0
+    ainda, lidas = set(), set()
 
     def guardar_pend(rede, alvo, item, pub_txt, link):
         nonlocal novos
         nome = f"{rede}-{item[0]}.json"
+        ainda.add(nome)
         if _ja_tratado(nome):
             return
         texto = _limpar_txt(item[1])
@@ -309,7 +311,10 @@ def recolher_comentarios(forcar=False):
         media = pedido("GET", f"{IG}/media", {"fields": "id,caption,permalink,timestamp,comments_count", "limit": "20"}).get("data", [])
     except ErroMeta as e:
         print(f"Comentários IG: {e}")
-        media = []
+        media = None
+    if media is not None:
+        lidas.add("instagram")
+    media = media or []
     for m in media:
         if not m.get("comments_count") or hora(m["timestamp"]) < limite:
             continue
@@ -318,6 +323,7 @@ def recolher_comentarios(forcar=False):
             lst = pedido("GET", f"{m['id']}/comments", {"fields": "id,text,username,timestamp,replies{id,text,username,timestamp}", "limit": "50"}).get("data", [])
         except ErroMeta as e:
             print(f"Comentários IG {m['id']}: {e}")
+            lidas.discard("instagram")
             continue
         for c in lst:
             fio = [(c["id"], c.get("text"), c.get("username") == "mcg.advogado", hora(c["timestamp"]))]
@@ -329,12 +335,15 @@ def recolher_comentarios(forcar=False):
 
     # Facebook (publicações e Reels da Página)
     posts = []
+    lidas.add("facebook")
     for ponto, campos in ((f"{PAGE}/feed", "id,message,permalink_url,created_time"),
                           (f"{PAGE}/video_reels", "id,description,permalink_url,created_time")):
         try:
             posts += pedido("GET", ponto, {"fields": campos, "limit": "20"}).get("data", [])
         except ErroMeta as e:
             print(f"Comentários FB {ponto}: {e}")
+            if ponto.endswith("/feed"):
+                lidas.discard("facebook")
     vistos = set()
     for p in posts:
         if p["id"] in vistos or hora(p["created_time"]) < limite:
@@ -345,6 +354,7 @@ def recolher_comentarios(forcar=False):
             lst = pedido("GET", f"{p['id']}/comments", {"fields": "id,message,from,created_time,comments.limit(25){id,message,from,created_time}", "limit": "50"}).get("data", [])
         except ErroMeta as e:
             print(f"Comentários FB {p['id']}: {e}")
+            lidas.discard("facebook")
             continue
         for c in lst:
             eu = lambda x: (x.get("from") or {}).get("id") == PAGE
@@ -355,6 +365,20 @@ def recolher_comentarios(forcar=False):
                 if it[3] >= limite:
                     guardar_pend("facebook", c["id"], it, pub, p.get("permalink_url", ""))
 
+    # Já respondidos à mão (ou apagados): saem dos pendentes, se ainda não foram aprovados.
+    for caminho in glob.glob(os.path.join(COMENT, "pendentes", "*.json")):
+        nome = os.path.basename(caminho)
+        if nome.split("-")[0] not in lidas or nome in ainda:
+            continue
+        with open(caminho, encoding="utf-8") as f:
+            c = json.load(f)
+        if c.get("aprovado"):
+            continue
+        c["respondido_a_mao"] = f"{agora():%Y-%m-%d %H:%M}"
+        os.makedirs(os.path.join(COMENT, "respondidos"), exist_ok=True)
+        with open(os.path.join(COMENT, "respondidos", nome), "w", encoding="utf-8") as f:
+            json.dump(c, f, ensure_ascii=False, indent=2)
+        os.remove(caminho)
     with open(marca, "w") as f:
         f.write(f"{agora():%Y-%m-%d %H:%M}")
     if novos:
