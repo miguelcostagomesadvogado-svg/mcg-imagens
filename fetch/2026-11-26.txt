@@ -1,0 +1,7 @@
+colacao-mulher-album.jpg https://images.unsplash.com/photo-1701546858919-a443925c3d17?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+colacao-album-maos.jpg https://images.unsplash.com/photo-1528569937393-ee892b976859?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+divcredito-mulher-anel.jpg https://images.unsplash.com/photo-1719558592073-1edc6da8c73b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+divcredito-maos-anel.jpg https://images.unsplash.com/photo-1655932788096-4a2da89f6fa8?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+ferias-mulher-mala.jpg https://images.unsplash.com/photo-1787724779313-0f3cd6d4ae1c?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+tgv-mulher-caixas.jpg https://images.unsplash.com/photo-1714647211902-bb711d643a17?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+tgv-mulher-caixa.jpg https://images.unsplash.com/flagged/photo-1594051723956-b14e836bdeb5?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
