@@ -568,6 +568,8 @@ def main():
             func()
         except Exception as e:  # os comentários nunca podem travar a publicação
             print(f"Comentários: erro {e}")
+    if os.path.isdir(COMENT):
+        git("add", "-A", COMENT)  # o ciclo em curso faz o commit e o push
 
     linhas = ["Ligação à Meta: ATIVA", "", f"Última execução: {agora():%Y-%m-%d %H:%M} (Lisboa)"]
     if publicadas:
