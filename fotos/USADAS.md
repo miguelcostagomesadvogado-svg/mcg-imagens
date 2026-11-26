@@ -45,3 +45,6 @@ lesao-mulher-palete.jpg (capa 12h30 e crachá do fecho, história da Carla), les
 
 ## 2026-11-24
 menor-mae-filho-sofa, menor-mae-filho-retrato, menor-mae-filho-tv, faturas-empresaria-fato, faturas-empresaria-retrato, faturas-empresaria-caderno, credito-mulher-cartao, senhorio-chave-porta
+
+## 2026-11-26
+colacao-mulher-album.jpg (capa 12h30, história da Beatriz), colacao-album-maos.jpg (story 21h), divcredito-mulher-anel.jpg (capa 20h, história da Teresa, Património), divcredito-maos-anel.jpg (story 22h), ferias-mulher-mala.jpg (10h30), tgv-mulher-caixas.jpg (18h); miguel-cover.jpg nos fechos; não usada: tgv-mulher-caixa.jpg
