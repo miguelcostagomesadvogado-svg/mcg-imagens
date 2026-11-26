@@ -245,6 +245,160 @@ def recolher_perguntas(forcar=False):
     return destino
 
 
+# ---------- Comentários dos seguidores: recolha e respostas aprovadas ----------
+# comentarios/pendentes/<rede>-<id>.json  -> comentários à espera de resposta
+#   o Claude escreve "resposta"; o Dr. Miguel aprova -> "aprovado": true -> a Action responde
+#   "ignorar": true -> arquiva sem responder
+# comentarios/respondidos/ e comentarios/ignorados/ -> arquivo
+# RGPD (repositório público): guarda só o texto do comentário, nunca nomes nem @.
+
+COMENT = "comentarios"
+DIAS_COMENT = 7
+MIN_ENTRE_RECOLHAS = 10
+
+
+def _ja_tratado(nome):
+    return any(os.path.exists(os.path.join(COMENT, d, nome)) for d in ("pendentes", "respondidos", "ignorados"))
+
+
+def _limpar_txt(t):
+    return re.sub(r"@[\w.]+", "", t or "").strip()
+
+
+def _pendentes_do_fio(itens, eu):
+    """itens: lista (id, texto, autor_e_eu, quando) do fio (comentário + respostas).
+    Devolve os comentários de terceiros feitos depois da última intervenção da MCG."""
+    itens = sorted(itens, key=lambda x: x[3])
+    ultimo_meu = max([i for i, it in enumerate(itens) if it[2]], default=-1)
+    return [it for it in itens[ultimo_meu + 1:] if not it[2]]
+
+
+def recolher_comentarios(forcar=False):
+    os.makedirs(os.path.join(COMENT, "pendentes"), exist_ok=True)
+    marca = os.path.join(COMENT, "ultima-recolha.txt")
+    if not forcar and os.path.exists(marca):
+        try:
+            ult = dt.datetime.strptime(open(marca).read().strip(), "%Y-%m-%d %H:%M").replace(tzinfo=LX)
+            if (agora() - ult).total_seconds() < MIN_ENTRE_RECOLHAS * 60:
+                return 0
+        except ValueError:
+            pass
+    limite = agora() - dt.timedelta(days=DIAS_COMENT)
+    novos = 0
+
+    def guardar_pend(rede, alvo, item, pub_txt, link):
+        nonlocal novos
+        nome = f"{rede}-{item[0]}.json"
+        if _ja_tratado(nome):
+            return
+        texto = _limpar_txt(item[1])
+        if not texto:
+            return
+        dados = {"rede": rede, "alvo": alvo, "comentario_id": item[0], "comentario": texto,
+                 "quando": item[3].strftime("%Y-%m-%d %H:%M"), "publicacao": pub_txt, "link": link,
+                 "resposta": "", "aprovado": False}
+        with open(os.path.join(COMENT, "pendentes", nome), "w", encoding="utf-8") as f:
+            json.dump(dados, f, ensure_ascii=False, indent=2)
+        novos += 1
+
+    def hora(txt):
+        return dt.datetime.fromisoformat(txt.replace("Z", "+00:00").replace("+0000", "+00:00")).astimezone(LX)
+
+    # Instagram
+    try:
+        media = pedido("GET", f"{IG}/media", {"fields": "id,caption,permalink,timestamp,comments_count", "limit": "20"}).get("data", [])
+    except ErroMeta as e:
+        print(f"Comentários IG: {e}")
+        media = []
+    for m in media:
+        if not m.get("comments_count") or hora(m["timestamp"]) < limite:
+            continue
+        pub = (m.get("caption") or "").split("\n")[0][:120]
+        try:
+            lst = pedido("GET", f"{m['id']}/comments", {"fields": "id,text,username,timestamp,replies{id,text,username,timestamp}", "limit": "50"}).get("data", [])
+        except ErroMeta as e:
+            print(f"Comentários IG {m['id']}: {e}")
+            continue
+        for c in lst:
+            fio = [(c["id"], c.get("text"), c.get("username") == "mcg.advogado", hora(c["timestamp"]))]
+            for r in (c.get("replies") or {}).get("data", []):
+                fio.append((r["id"], r.get("text"), r.get("username") == "mcg.advogado", hora(r["timestamp"])))
+            for it in _pendentes_do_fio(fio, "mcg.advogado"):
+                if it[3] >= limite:
+                    guardar_pend("instagram", c["id"], it, pub, m.get("permalink", ""))
+
+    # Facebook (publicações e Reels da Página)
+    posts = []
+    for ponto, campos in ((f"{PAGE}/feed", "id,message,permalink_url,created_time"),
+                          (f"{PAGE}/video_reels", "id,description,permalink_url,created_time")):
+        try:
+            posts += pedido("GET", ponto, {"fields": campos, "limit": "20"}).get("data", [])
+        except ErroMeta as e:
+            print(f"Comentários FB {ponto}: {e}")
+    vistos = set()
+    for p in posts:
+        if p["id"] in vistos or hora(p["created_time"]) < limite:
+            continue
+        vistos.add(p["id"])
+        pub = (p.get("message") or p.get("description") or "").split("\n")[0][:120]
+        try:
+            lst = pedido("GET", f"{p['id']}/comments", {"fields": "id,message,from,created_time,comments.limit(25){id,message,from,created_time}", "limit": "50"}).get("data", [])
+        except ErroMeta as e:
+            print(f"Comentários FB {p['id']}: {e}")
+            continue
+        for c in lst:
+            eu = lambda x: (x.get("from") or {}).get("id") == PAGE
+            fio = [(c["id"], c.get("message"), eu(c), hora(c["created_time"]))]
+            for r in (c.get("comments") or {}).get("data", []):
+                fio.append((r["id"], r.get("message"), eu(r), hora(r["created_time"])))
+            for it in _pendentes_do_fio(fio, PAGE):
+                if it[3] >= limite:
+                    guardar_pend("facebook", c["id"], it, pub, p.get("permalink_url", ""))
+
+    with open(marca, "w") as f:
+        f.write(f"{agora():%Y-%m-%d %H:%M}")
+    if novos:
+        print(f"Comentários novos por responder: {novos}")
+    return novos
+
+
+def responder_aprovadas():
+    feitas = []
+    for caminho in sorted(glob.glob(os.path.join(COMENT, "pendentes", "*.json"))):
+        with open(caminho, encoding="utf-8") as f:
+            c = json.load(f)
+        destino = None
+        if c.get("ignorar"):
+            destino = "ignorados"
+        elif c.get("aprovado") and (c.get("resposta") or "").strip():
+            try:
+                if c["rede"] == "instagram":
+                    rid = pedido("POST", f"{c['alvo']}/replies", {"message": c["resposta"].strip()}).get("id")
+                else:
+                    rid = pedido("POST", f"{c['alvo']}/comments", {"message": c["resposta"].strip()}).get("id")
+                c["respondido_em"] = f"{agora():%Y-%m-%d %H:%M}"
+                c["resposta_id"] = rid
+                destino = "respondidos"
+            except ErroMeta as e:
+                c["erro"] = f"{agora():%Y-%m-%d %H:%M} {e}"
+                c["aprovado"] = False
+                print(f"Resposta ERRO {caminho}: {e}")
+        if destino or c.get("erro"):
+            if destino:
+                os.makedirs(os.path.join(COMENT, destino), exist_ok=True)
+                novo = os.path.join(COMENT, destino, os.path.basename(caminho))
+            else:
+                novo = caminho
+            with open(novo, "w", encoding="utf-8") as f:
+                json.dump(c, f, ensure_ascii=False, indent=2)
+            if destino:
+                os.remove(caminho)
+                feitas.append(os.path.basename(caminho))
+    if feitas:
+        print("Comentários tratados: " + ", ".join(feitas))
+    return feitas
+
+
 # ---------- ciclo principal ----------
 
 def ler_hora(txt):
@@ -308,6 +462,10 @@ def main():
         return
     if modo == "perguntas":
         recolher_perguntas(forcar=True)
+        return
+    if modo == "comentarios":
+        responder_aprovadas()
+        recolher_comentarios(forcar=True)
         return
     # Se a ligação à Meta falhar, não mexe na agenda (as peças não contam tentativas).
     try:
@@ -405,6 +563,11 @@ def main():
         recolher_perguntas()
     except Exception as e:  # a recolha nunca pode travar a publicação
         print(f"Perguntas: erro {e}")
+    for func in (responder_aprovadas, recolher_comentarios):
+        try:
+            func()
+        except Exception as e:  # os comentários nunca podem travar a publicação
+            print(f"Comentários: erro {e}")
 
     linhas = ["Ligação à Meta: ATIVA", "", f"Última execução: {agora():%Y-%m-%d %H:%M} (Lisboa)"]
     if publicadas:
@@ -440,6 +603,8 @@ def ciclo(minutos=345, intervalo=120):
         git("add", "-A", AGENDA)
         if os.path.isdir(PERGUNTAS):
             git("add", "-A", PERGUNTAS)
+        if os.path.isdir(COMENT):
+            git("add", "-A", COMENT)
         if git("diff", "--cached", "--quiet").returncode != 0:
             git("commit", "-q", "-m", "Agenda: resultado da publicação")
             for _ in range(3):

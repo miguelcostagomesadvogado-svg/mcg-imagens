@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: 'ciclo, publicar ou verificar'
+        description: 'ciclo, publicar, verificar ou comentarios'
         default: 'ciclo'
 permissions:
   contents: write
@@ -39,7 +39,7 @@ jobs:
       - name: Guardar resultado
         if: always()
         run: |
-          git add -A agenda
+          git add -A agenda comentarios perguntas 2>/dev/null || git add -A agenda
           if ! git diff --cached --quiet; then
             git commit -m "Agenda: resultado da publicação"
             for i in 1 2 3; do git pull --rebase -q && git push -q && break; sleep 5; done
