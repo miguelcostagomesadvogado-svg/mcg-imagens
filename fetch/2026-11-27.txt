@@ -1,0 +1,7 @@
+bf-mulher-encomenda.jpg https://images.unsplash.com/photo-1770013413878-2530e2c3d82b?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+bf-mulher-porta.jpg https://images.unsplash.com/photo-1752070182361-9fa562ed7f97?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+ita-mulher-muletas.jpg https://images.unsplash.com/photo-1701278749640-959c8e0cacdf?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+ita-muleta-bengala.jpg https://images.unsplash.com/photo-1633158832532-f71e9c7ac6d6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+camara-vigilancia-parede.jpg https://images.unsplash.com/photo-1549109926-58f039549485?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+cao-mulher-labrador.jpg https://images.unsplash.com/photo-1618946019619-9d7b7d86b48f?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
+cao-mulher-campo.jpg https://images.unsplash.com/photo-1504199098938-e4bbcee5e4a9?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600
