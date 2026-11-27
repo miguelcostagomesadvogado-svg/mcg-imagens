@@ -48,3 +48,6 @@ menor-mae-filho-sofa, menor-mae-filho-retrato, menor-mae-filho-tv, faturas-empre
 
 ## 2026-11-26
 colacao-mulher-album.jpg (capa 12h30, história da Beatriz), colacao-album-maos.jpg (story 21h), divcredito-mulher-anel.jpg (capa 20h, história da Teresa, Património), divcredito-maos-anel.jpg (story 22h), ferias-mulher-mala.jpg (10h30), tgv-mulher-caixas.jpg (18h); miguel-cover.jpg nos fechos; não usada: tgv-mulher-caixa.jpg
+
+## 2026-11-27
+bf-mulher-encomenda.jpg (capa 12h30, história da Mariana), bf-mulher-porta.jpg (story 21h), ita-muleta-bengala.jpg (capa 20h, história da Cláudia), camara-vigilancia-parede.jpg (10h30), cao-mulher-labrador.jpg (18h); miguel-cover.jpg no fecho das 12h30; não usadas: ita-mulher-muletas.jpg (sorridente, não serve), cao-mulher-campo.jpg
