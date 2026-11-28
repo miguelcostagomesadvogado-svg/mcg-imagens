@@ -1,0 +1,16 @@
+{
+  "quando": "2026-11-28T07:00",
+  "redes": [
+    "instagram",
+    "facebook"
+  ],
+  "tipo": "story",
+  "imagens": [
+    "2026-11-28/0700-story-1.jpg",
+    "2026-11-28/0700-story-2.jpg",
+    "2026-11-28/0700-story-3.jpg"
+  ],
+  "legenda": "",
+  "aprovado": true,
+  "via": "github"
+}
